@@ -60,7 +60,6 @@
             this.picSquareToCross2 = new System.Windows.Forms.PictureBox();
             this.picSquareToCross3 = new System.Windows.Forms.PictureBox();
             this.picSquareToCross1 = new System.Windows.Forms.PictureBox();
-            this.labelEvalSquareToSquare = new System.Windows.Forms.Label();
             this.labelEvalSquareToR1 = new System.Windows.Forms.Label();
             this.labelEvalR1ToSquare = new System.Windows.Forms.Label();
             this.labelGraph = new System.Windows.Forms.Label();
@@ -204,7 +203,7 @@
             "Average",
             "Fast",
             "Slow"});
-            this.cmbMode.Location = new System.Drawing.Point(460, 64);
+            this.cmbMode.Location = new System.Drawing.Point(460, 63);
             this.cmbMode.Name = "cmbMode";
             this.cmbMode.Size = new System.Drawing.Size(120, 27);
             this.cmbMode.TabIndex = 11;
@@ -403,17 +402,6 @@
             this.picSquareToCross1.TabIndex = 29;
             this.picSquareToCross1.TabStop = false;
             // 
-            // labelEvalSquareToSquare
-            // 
-            this.labelEvalSquareToSquare.AutoSize = true;
-            this.labelEvalSquareToSquare.Font = new System.Drawing.Font("Noto Sans JP Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelEvalSquareToSquare.Location = new System.Drawing.Point(370, 352);
-            this.labelEvalSquareToSquare.Name = "labelEvalSquareToSquare";
-            this.labelEvalSquareToSquare.Size = new System.Drawing.Size(26, 30);
-            this.labelEvalSquareToSquare.TabIndex = 35;
-            this.labelEvalSquareToSquare.Text = "0";
-            this.labelEvalSquareToSquare.Paint += new System.Windows.Forms.PaintEventHandler(this.LabelEval_Paint);
-            // 
             // labelEvalSquareToR1
             // 
             this.labelEvalSquareToR1.AutoSize = true;
@@ -451,7 +439,7 @@
             // 
             this.labelGraphAverage.AutoSize = true;
             this.labelGraphAverage.Font = new System.Drawing.Font("Noto Sans JP", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelGraphAverage.Location = new System.Drawing.Point(40, 490);
+            this.labelGraphAverage.Location = new System.Drawing.Point(36, 650);
             this.labelGraphAverage.Name = "labelGraphAverage";
             this.labelGraphAverage.Size = new System.Drawing.Size(46, 24);
             this.labelGraphAverage.TabIndex = 37;
@@ -471,6 +459,8 @@
             // chkCrossButtonReset
             // 
             this.chkCrossButtonReset.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkCrossButtonReset.Checked = true;
+            this.chkCrossButtonReset.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkCrossButtonReset.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.chkCrossButtonReset.Location = new System.Drawing.Point(460, 166);
             this.chkCrossButtonReset.Name = "chkCrossButtonReset";
@@ -500,7 +490,6 @@
             this.Controls.Add(this.labelCrossReset);
             this.Controls.Add(this.labelGraphAverage);
             this.Controls.Add(this.labelGraph);
-            this.Controls.Add(this.labelEvalSquareToSquare);
             this.Controls.Add(this.labelEvalSquareToR1);
             this.Controls.Add(this.labelEvalR1ToSquare);
             this.Controls.Add(this.labelSquareToCross);
@@ -599,7 +588,6 @@
         private System.Windows.Forms.PictureBox picSquareToCross2;
         private System.Windows.Forms.PictureBox picSquareToCross3;
         private System.Windows.Forms.PictureBox picSquareToCross1;
-        private System.Windows.Forms.Label labelEvalSquareToSquare;
         private System.Windows.Forms.Label labelEvalSquareToR1;
         private System.Windows.Forms.Label labelEvalR1ToSquare;
         private System.Windows.Forms.Label labelGraph;

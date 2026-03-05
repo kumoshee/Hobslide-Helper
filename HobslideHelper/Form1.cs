@@ -65,7 +65,7 @@ namespace HobslideHelper
                     System.Reflection.BindingFlags.NonPublic)
                 .SetValue(this, true, null);
             cmbMode.SelectedIndex = 0;
-            graphRect = new Rectangle(40, 540, 540, 150);
+            graphRect = new Rectangle(40, 490, 540, 150);
         }
 
         private void cmbMode_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,10 +78,6 @@ namespace HobslideHelper
             labelGraphAverage.Text = $"AVG:";
         }
 
-        private void ChkCrossButtonReset_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
         private void ChkOverlay_CheckedChanged(object sender, EventArgs e)
         {
             if (chkOverlay.Checked)
@@ -262,7 +258,7 @@ namespace HobslideHelper
                     UpdateEvalSquareToR1(); // Trigger Evaluation 6.2 correctly on R1 press
                 }
 
-                // 7. R1 -> R1
+                // 8. R1 -> R1
                 if (prevR1PressFrame > 0)
                 {
                     r1ToR1Frames = frameCounter - prevR1PressFrame;
@@ -296,7 +292,7 @@ namespace HobslideHelper
                     UpdateEvalR1ToSquare(); // Trigger Evaluation 6.1 correctly on Square press
                 }
 
-                // 8. □ -> □
+                // 6. □ -> □
                 if (prevSquarePressFrame > 0)
                 {
                     squareToSquareFrames = frameCounter - prevSquarePressFrame;
@@ -326,11 +322,16 @@ namespace HobslideHelper
                 crossPressFrame = frameCounter;
                 picCrossState.Image = Properties.Resources.on;
 
-                squareToSquareHistory.Clear();
-                this.Invalidate(graphRect);
-                labelGraphAverage.Text = $"AVG:";
+                if (chkCrossButtonReset.Checked)
+                {
+                    squareToSquareHistory.Clear();
+                    this.Invalidate(graphRect);
+                    labelEvalR1ToSquare.Text = "";
+                    labelEvalSquareToR1.Text = "";
+                    labelGraphAverage.Text = $"AVG:";
+                }
 
-                // 6. □ -> ✕
+                // 7. □ -> ✕
                 if (lastSquarePressFrame > 0 && lastSquarePressFrame > r1PressFrame)
                 {
                     squareToCrossFrames = frameCounter - lastSquarePressFrame;
@@ -352,7 +353,7 @@ namespace HobslideHelper
             squarePressed = squareNow;
             crossPressed = crossNow;
 
-            // 9. R1 -> □ -> R1
+            // 10. R1 -> □ -> R1
             int r1SquareR1Total = r1ToSquareFrames + squareToR1Frames;
 
             // Update Constant Frame Displays
@@ -364,14 +365,10 @@ namespace HobslideHelper
 
         void UpdateEvalR1ToSquare()
         {
-            // 6.1 R1 → □ の評価（項目4）
+            // R1 → □ の評価
             // 計算式: [4のフレーム数] - (targetFrame - [5のフレーム数])
             // この評価は□が確定したタイミングで行う
             int modeIdx = cmbMode.SelectedIndex;
-            if (cmbMode.InvokeRequired)
-                cmbMode.Invoke(new Action(() => { modeIdx = cmbMode.SelectedIndex; }));
-            else
-                modeIdx = cmbMode.SelectedIndex;
 
             switch(modeIdx){
                 case 0: targetFrame = 45; break; // Average
@@ -419,13 +416,8 @@ namespace HobslideHelper
 
         void UpdateEvalSquareToR1()
         {
-            // 6.2 □ → R1 の評価（項目5）
+            // □ → R1 の評価
             // 計算式: [5のフレーム数] - 24
-            int modeIdx = cmbMode.SelectedIndex;
-            if (cmbMode.InvokeRequired)
-                cmbMode.Invoke(new Action(() => { modeIdx = cmbMode.SelectedIndex; }));
-            else
-                modeIdx = cmbMode.SelectedIndex;
 
             int diff5 = squareToR1Frames - 24;
             string eval5 = "";

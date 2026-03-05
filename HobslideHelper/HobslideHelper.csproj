@@ -94,6 +94,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Resource Include="Font\NotoSansJP-Black.ttf" />
+    <Resource Include="Font\NotoSansJP-Bold.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
