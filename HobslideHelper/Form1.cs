@@ -10,87 +10,6 @@ using System.Linq;
 
 namespace HobslideHelper
 {
-    // Custom label to draw pastel rainbow text for "Perfect"
-    public class EvalLabel : Label
-    {
-        public bool IsPerfect { get; set; } = false;
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            if (!IsPerfect || string.IsNullOrEmpty(Text))
-            {
-                base.OnPaint(e);
-                return;
-            }
-
-            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            e.Graphics.TextRenderingHint =
-                System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
-
-            Rectangle rect = this.ClientRectangle;
-
-            using (GraphicsPath path = new GraphicsPath())
-            {
-                float emSize = e.Graphics.DpiY * Font.Size / 72;
-                path.AddString(
-                    Text,
-                    Font.FontFamily,
-                    (int)Font.Style,
-                    emSize,
-                    rect,
-                    new StringFormat
-                    {
-                        Alignment = StringAlignment.Near,
-                        LineAlignment = StringAlignment.Center
-                    });
-
-                RectangleF textBounds = path.GetBounds();
-                float penWidth = 4f;
-                textBounds.Inflate(penWidth / 2f, 0);
-
-                // ===== 虹色縁取り（緑→青→紫→赤→橙→黄）=====
-                using (LinearGradientBrush rainbowBrush =
-                    new LinearGradientBrush(
-                        new PointF(textBounds.Left, textBounds.Top),
-                        new PointF(textBounds.Right, textBounds.Top),
-                        Color.MediumAquamarine,
-                        Color.Gold))
-                {
-                    ColorBlend cb = new ColorBlend();
-                    cb.Positions = new[]
-                    {
-                        0f, 0.2f, 0.4f, 0.6f, 0.8f, 1f
-                    };
-                    cb.Colors = new[]
-                    {
-                        Color.MediumAquamarine,   // 緑
-                        Color.DeepSkyBlue,  // 青
-                        Color.MediumPurple, // 紫
-                        Color.LightCoral,   // 赤
-                        Color.Orange,       // 橙
-                        Color.Gold          // 黄
-                    };
-
-                    rainbowBrush.InterpolationColors = cb;
-
-                    using (Pen outlinePen = new Pen(rainbowBrush, 4)
-                    {
-                        LineJoin = LineJoin.Round
-                    })
-                    {
-                        e.Graphics.DrawPath(outlinePen, path);
-                    }
-                }
-
-                // ===== 中身は白 =====
-                using (SolidBrush whiteBrush = new SolidBrush(Color.White))
-                {
-                    e.Graphics.FillPath(whiteBrush, path);
-                }
-            }
-        }
-    }
-
     public partial class Form1 : Form
     {
         DirectInput directInput;
@@ -133,150 +52,36 @@ namespace HobslideHelper
         // Graphing data
         List<int> squareToSquareHistory = new List<int>();
 
-        // UI Components
-        Label lblR1Hold, lblSquareHold, lblCrossHold;
-        Label lblR1ToSquare, lblSquareToR1, lblSquareToCross;
-        Label lblR1ToR1, lblSquareToSquare, lblR1SquareR1Total;
-        EvalLabel lblEvalR1ToSquare, lblEvalSquareToR1;
-
-        PictureBox picR1State, picSquareState, picCrossState;
-
-        Font mainFont = new Font("BIZ UD Gothic", 16, FontStyle.Bold);
-        Font smallFont = new Font("BIZ UD Gothic", 12, FontStyle.Bold);
-
-        // Options
-        ComboBox cmbMode;
-        CheckBox chkOverlay;
-
         Rectangle graphRect;
 
         public Form1()
         {
             InitializeComponent();
-            this.DoubleBuffered = true;
             InitializeJoystick();
-            InitializeUI();
             StartGameLoop();
             this.GetType()
                 .GetProperty("DoubleBuffered",
                     System.Reflection.BindingFlags.Instance |
                     System.Reflection.BindingFlags.NonPublic)
                 .SetValue(this, true, null);
-                
-            this.Paint += Form1_Paint;
-        }
-
-        void InitializeUI()
-        {
-            this.Text = "Hobslide Helper";
-            this.Width = 650;
-            this.Height = 850;
-            this.BackColor = Color.FromArgb(30, 30, 30);
-            this.ForeColor = Color.White;
-
-            // Optional: If we want to move the window by clicking background in Overlay mode
-            this.MouseDown += Form1_MouseDown;
-
-            this.Controls.Clear();
-
-            int startY = 20;
-            int gapY = 50;
-            int currentY = startY;
-
-            // 1, 2, 3: 単体ボタン表示
-            CreateSectionLabel("【Button Input】", 20, currentY);
-            currentY += 40;
-
-            // 1. R1
-            CreatePictureBox("r1.png", 40, currentY);
-            picR1State = CreatePictureBox("off.png", 90, currentY);
-            lblR1Hold = CreateValueLabel(290, currentY);
-            currentY += gapY;
-
-            // 2. □
-            CreatePictureBox("square.png", 40, currentY);
-            picSquareState = CreatePictureBox("off.png", 90, currentY);
-            lblSquareHold = CreateValueLabel(290, currentY);
-            currentY += gapY;
-
-            // 3. ✕
-            CreatePictureBox("cross.png", 40, currentY);
-            picCrossState = CreatePictureBox("off.png", 90, currentY);
-            lblCrossHold = CreateValueLabel(290, currentY);
-            currentY += gapY + 10;
-
-            // Controls
-            CreateSectionLabel("【Settings】", 20, currentY);
-            
-            cmbMode = new ComboBox();
-            cmbMode.Items.AddRange(new string[] { "Average", "Fast", "Slow" });
             cmbMode.SelectedIndex = 0;
-            cmbMode.Location = new Point(200, currentY);
-            cmbMode.Width = 120;
-            cmbMode.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbMode.SelectedIndexChanged += (s, e) =>
-            {
-                squareToSquareHistory.Clear();
-                this.Invalidate(graphRect);
-
-                lblEvalR1ToSquare.Text = "";
-                lblEvalSquareToR1.Text = "";
-            };
-            Controls.Add(cmbMode);
-
-            chkOverlay = new CheckBox();
-            chkOverlay.Text = "Overlay";
-            chkOverlay.AutoSize = true;
-            chkOverlay.Location = new Point(340, currentY + 3);
-            chkOverlay.CheckedChanged += ChkOverlay_CheckedChanged;
-            Controls.Add(chkOverlay);
-
-            currentY += gapY;
-
-            // 4~9: 入力シーケンス表示
-            CreateSectionLabel("【Input Sequence】", 20, currentY);
-            currentY += 40;
-
-            // 4. R1 -> □
-            CreateSequenceImages(new[] { "r1.png", "arrow.png", "square.png" }, 40, currentY);
-            lblR1ToSquare = CreateValueLabel(290, currentY);
-            lblEvalR1ToSquare = CreateEvalLabel(400, currentY);
-            currentY += gapY;
-
-            // 5. □ -> R1
-            CreateSequenceImages(new[] { "square.png", "arrow.png", "r1.png" }, 40, currentY);
-            lblSquareToR1 = CreateValueLabel(290, currentY);
-            lblEvalSquareToR1 = CreateEvalLabel(400, currentY);
-            currentY += gapY;
-
-            // 6. □ -> ✕
-            CreateSequenceImages(new[] { "square.png", "arrow.png", "cross.png" }, 40, currentY);
-            lblSquareToCross = CreateValueLabel(290, currentY);
-            currentY += gapY;
-
-            // 7. R1 -> R1
-            CreateSequenceImages(new[] { "r1.png", "arrow.png", "r1.png" }, 40, currentY);
-            lblR1ToR1 = CreateValueLabel(290, currentY);
-            currentY += gapY;
-
-            // 8. □ -> □
-            CreateSequenceImages(new[] { "square.png", "arrow.png", "square.png" }, 40, currentY);
-            lblSquareToSquare = CreateValueLabel(290, currentY);
-            currentY += gapY;
-
-            // 9. R1 -> □ -> R1
-            CreateSequenceImages(new[] { "r1.png", "arrow.png", "square.png", "arrow.png", "r1.png" }, 40, currentY);
-            lblR1SquareR1Total = CreateValueLabel(290, currentY);
-            currentY += gapY;
-
-            // Graph Section
-            CreateSectionLabel("【Graph】", 20, currentY);
-            
-            currentY += 30;
-
-            graphRect = new Rectangle(40, currentY, 540, 150);
+            graphRect = new Rectangle(40, 540, 540, 150);
         }
 
+        private void cmbMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            squareToSquareHistory.Clear();
+            this.Invalidate(graphRect);
+
+            labelEvalR1ToSquare.Text = "";
+            labelEvalSquareToR1.Text = "";
+            labelGraphAverage.Text = $"AVG:";
+        }
+
+        private void ChkCrossButtonReset_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
         private void ChkOverlay_CheckedChanged(object sender, EventArgs e)
         {
             if (chkOverlay.Checked)
@@ -371,98 +176,7 @@ namespace HobslideHelper
 
             // 平均表示
             double avg = squareToSquareHistory.Average();
-            g.DrawString($"AVG: {avg:F2}F",
-                smallFont,
-                Brushes.White,
-                new PointF(graphRect.Left + 10, graphRect.Bottom - 25));
-        }
-
-        private Image GetImageOrFallback(string file)
-        {
-            switch (file)
-            {
-                case "r1.png":
-                    return Properties.Resources.r1;
-
-                case "square.png":
-                    return Properties.Resources.square;
-
-                case "cross.png":
-                    return Properties.Resources.cross;
-
-                case "arrow.png":
-                    return Properties.Resources.arrow;
-
-                case "on.png":
-                    return Properties.Resources.on;
-
-                case "off.png":
-                    return Properties.Resources.off;
-
-                default:
-                    return null;
-            }
-        }
-
-        PictureBox CreatePictureBox(string file, int x, int y)
-        {
-            PictureBox pic = new PictureBox();
-            pic.Image = GetImageOrFallback(file);
-            pic.SizeMode = PictureBoxSizeMode.StretchImage;
-            pic.Size = new Size(32, 32);
-            pic.Location = new Point(x, y);
-            Controls.Add(pic);
-            return pic;
-        }
-
-        void CreateSequenceImages(string[] files, int startX, int y)
-        {
-            int currentX = startX;
-            foreach (var file in files)
-            {
-                CreatePictureBox(file, currentX, y);
-                currentX += 40; // icon width + gap
-            }
-        }
-
-        Label CreateSectionLabel(string text, int x, int y)
-        {
-            Label lbl = new Label();
-            lbl.Text = text;
-            lbl.AutoSize = true;
-            lbl.Location = new Point(x, y);
-            lbl.Font = smallFont;
-            lbl.ForeColor = Color.LightSkyBlue;
-            Controls.Add(lbl);
-            return lbl;
-        }
-
-        Label CreateValueLabel(int x, int y)
-        {
-            Label lbl = new Label();
-            lbl.AutoSize = false;
-            lbl.Width = 80;
-            lbl.Height = 32;
-            lbl.Location = new Point(x, y);
-            lbl.Font = mainFont;
-            lbl.TextAlign = ContentAlignment.MiddleRight;
-            lbl.Text = "0F";
-            Controls.Add(lbl);
-            return lbl;
-        }
-
-        EvalLabel CreateEvalLabel(int x, int y)
-        {
-            EvalLabel lbl = new EvalLabel();
-            lbl.AutoSize = false;
-            lbl.Width = 200;
-            lbl.Height = 32;
-            lbl.Location = new Point(x, y);
-            lbl.Font = mainFont;
-            lbl.TextAlign = ContentAlignment.MiddleLeft;
-            lbl.Text = "";
-            Controls.Add(lbl);
-            return lbl;
+            labelGraphAverage.Text = $"AVG: {avg:F2}F";
         }
 
         void InitializeJoystick()
@@ -539,7 +253,8 @@ namespace HobslideHelper
                 r1PressFrame = frameCounter;
                 prevR1PressFrame = lastR1PressFrame;
                 lastR1PressFrame = frameCounter;
-                
+                picR1State.Image = Properties.Resources.on;
+
                 // 5. □ -> R1
                 if (lastSquarePressFrame > 0 && lastSquarePressFrame > prevR1PressFrame)
                 {
@@ -562,7 +277,8 @@ namespace HobslideHelper
             {
                 r1ReleaseFrame = frameCounter;
                 r1HoldFrames = r1ReleaseFrame - r1PressFrame;
-                lblR1Hold.Text = $"{r1HoldFrames}F";
+                labelR1Hold.Text = $"{r1HoldFrames}F";
+                picR1State.Image = Properties.Resources.off;
             }
 
             // --- 2. □ State Management ---
@@ -571,6 +287,7 @@ namespace HobslideHelper
                 squarePressFrame = frameCounter;
                 prevSquarePressFrame = lastSquarePressFrame;
                 lastSquarePressFrame = frameCounter;
+                picSquareState.Image = Properties.Resources.on;
 
                 // 4. R1 -> □
                 if (lastR1PressFrame > 0 && lastR1PressFrame > prevSquarePressFrame)
@@ -599,17 +316,20 @@ namespace HobslideHelper
             {
                 squareReleaseFrame = frameCounter;
                 squareHoldFrames = squareReleaseFrame - squarePressFrame;
-                lblSquareHold.Text = $"{squareHoldFrames}F";
+                labelSquareHold.Text = $"{squareHoldFrames}F";
+                picSquareState.Image = Properties.Resources.off;
             }
 
             // --- 3. ✕ State Management ---
             if (crossNow && !crossPressed)
             {
                 crossPressFrame = frameCounter;
-                
+                picCrossState.Image = Properties.Resources.on;
+
                 squareToSquareHistory.Clear();
                 this.Invalidate(graphRect);
-                
+                labelGraphAverage.Text = $"AVG:";
+
                 // 6. □ -> ✕
                 if (lastSquarePressFrame > 0 && lastSquarePressFrame > r1PressFrame)
                 {
@@ -624,7 +344,8 @@ namespace HobslideHelper
             {
                 crossReleaseFrame = frameCounter;
                 crossHoldFrames = crossReleaseFrame - crossPressFrame;
-                lblCrossHold.Text = $"{crossHoldFrames}F";
+                labelCrossHold.Text = $"{crossHoldFrames}F";
+                picCrossState.Image = Properties.Resources.off;
             }
 
             r1Pressed = r1Now;
@@ -635,16 +356,10 @@ namespace HobslideHelper
             int r1SquareR1Total = r1ToSquareFrames + squareToR1Frames;
 
             // Update Constant Frame Displays
-            lblR1ToSquare.Text = $"{r1ToSquareFrames}F";
-            lblSquareToR1.Text = $"{squareToR1Frames}F";
-            lblSquareToCross.Text = $"{squareToCrossFrames}F";
-            lblR1ToR1.Text = $"{r1ToR1Frames}F";
-            lblSquareToSquare.Text = $"{squareToSquareFrames}F";
-            lblR1SquareR1Total.Text = $"{r1SquareR1Total}F";
-
-            picR1State.Image = GetImageOrFallback(r1Now ? "on.png" : "off.png");
-            picSquareState.Image = GetImageOrFallback(squareNow ? "on.png" : "off.png");
-            picCrossState.Image = GetImageOrFallback(crossNow ? "on.png" : "off.png");
+            labelR1ToSquare.Text = $"{r1ToSquareFrames}F";
+            labelSquareToR1.Text = $"{squareToR1Frames}F";
+            labelSquareToCross.Text = $"{squareToCrossFrames}F";
+            labelSquareToSquare.Text = $"{squareToSquareFrames}F";
         }
 
         void UpdateEvalR1ToSquare()
@@ -667,11 +382,11 @@ namespace HobslideHelper
             int diff4 = r1ToSquareFrames - (targetFrame - squareToR1Frames);
             string eval4 = "";
             Color color4 = Color.White;
-            bool perfect4 = false;
+            labelEvalR1ToSquare.Tag = false;
 
-            switch(modeIdx){
+            switch (modeIdx){
                 case 0: // Average 45F
-                    if (Math.Abs(diff4) == 0) { eval4 = "Perfect"; perfect4 = true; } // Perfect 0
+                    if (Math.Abs(diff4) == 0) { eval4 = "Perfect"; labelEvalR1ToSquare.Tag = true; } // Perfect 0
                     else if (Math.Abs(diff4) <= 2) { eval4 = "Great"; color4 = Color.Gold; } // Great ±1~±2
                     else if (Math.Abs(diff4) == 3) { eval4 = "Good"; color4 = Color.LimeGreen; } // Good ±3
                     else if (Math.Abs(diff4) <= 5) { eval4 = "Bad"; color4 = Color.DodgerBlue; } // Bad ±4~±5
@@ -680,7 +395,7 @@ namespace HobslideHelper
                 case 1: // Fast 42F
                     if (diff4 < -2) { eval4 = "Miss"; color4 = Color.Crimson; } // Miss -2未満
                     else if (diff4 <= -1) { eval4 = "Dangerous"; color4 = Color.OrangeRed; } // Dangerous -2~-1
-                    else if (diff4 <= 0) { eval4 = "Perfect"; perfect4 = true; } // Perfect 0
+                    else if (diff4 <= 0) { eval4 = "Perfect"; labelEvalR1ToSquare.Tag = true; } // Perfect 0
                     else if (diff4 <= 3) { eval4 = "Great"; color4 = Color.Gold; } // Great 1~3
                     else if (diff4 <= 6) { eval4 = "Good"; color4 = Color.LimeGreen; } // Good 4~6
                     else if (diff4 <= 8) { eval4 = "Bad"; color4 = Color.DodgerBlue; } // Bad 7~8
@@ -691,16 +406,15 @@ namespace HobslideHelper
                     else if (diff4 <= -7) { eval4 = "Bad"; color4 = Color.DodgerBlue; } // Bad -8~-7
                     else if (diff4 <= -4) { eval4 = "Good"; color4 = Color.LimeGreen; } // Good -6~-4
                     else if (diff4 <= -1) { eval4 = "Great"; color4 = Color.Gold; } // Great -3~-1
-                    else if (diff4 <= 0) { eval4 = "Perfect"; perfect4 = true; } // Perfect 0
+                    else if (diff4 <= 0) { eval4 = "Perfect"; labelEvalR1ToSquare.Tag = true; } // Perfect 0
                     else if (diff4 <= 2) { eval4 = "Dangerous"; color4 = Color.OrangeRed; } // Dangerous 1~2
                     else if (diff4 >= 3) { eval4 = "Miss"; color4 = Color.Crimson; } // Miss 3以上
                     break;
             }
 
-            lblEvalR1ToSquare.Text = $"{diff4:+0;-0;0} {eval4}";
-            lblEvalR1ToSquare.ForeColor = color4;
-            lblEvalR1ToSquare.IsPerfect = perfect4;
-            lblEvalR1ToSquare.Invalidate();
+            labelEvalR1ToSquare.Text = $"{diff4:+0;-0;0} {eval4}";
+            labelEvalR1ToSquare.ForeColor = color4;
+            labelEvalR1ToSquare.Invalidate();
         }
 
         void UpdateEvalSquareToR1()
@@ -716,20 +430,19 @@ namespace HobslideHelper
             int diff5 = squareToR1Frames - 24;
             string eval5 = "";
             Color color5 = Color.White;
-            bool perfect5 = false;
+            labelEvalSquareToR1.Tag = false;
 
             if (diff5 <= -6) { eval5 = "Miss"; color5 = Color.Crimson; } // Miss -6以下
             else if (diff5 <= -4) { eval5 = "Bad"; color5 = Color.DodgerBlue; } // Bad -5~-4
             else if (diff5 <= -2) { eval5 = "Great"; color5 = Color.Gold; } // Great -3~-2
-            else if (diff5 <= 1) { eval5 = "Perfect"; perfect5 = true; } // Perfect -1~1
+            else if (diff5 <= 1) { eval5 = "Perfect"; labelEvalSquareToR1.Tag = true; } // Perfect -1~1
             else if (diff5 <= 3) { eval5 = "Great"; color5 = Color.Gold; } // Great 2~3
             else if (diff5 <= 5){ eval5 = "Bad"; color5 = Color.DodgerBlue; } // Bad 4~5
             else if (diff5 >= 6){ eval5 = "Miss"; color5 = Color.Crimson; } // Miss 6以上
 
-            lblEvalSquareToR1.Text = $"{diff5:+0;-0;0} {eval5}";
-            lblEvalSquareToR1.ForeColor = color5;
-            lblEvalSquareToR1.IsPerfect = perfect5;
-            lblEvalSquareToR1.Invalidate();
+            labelEvalSquareToR1.Text = $"{diff5:+0;-0;0} {eval5}";
+            labelEvalSquareToR1.ForeColor = color5;
+            labelEvalSquareToR1.Invalidate();
         }
 
         Brush GetPointBrush(int value)
@@ -765,6 +478,52 @@ namespace HobslideHelper
                     break;
             }
             return Brushes.White;
+        }
+
+        private void LabelEval_Paint(object sender, PaintEventArgs e)
+        {
+            Label lbl = sender as Label;
+            if (lbl == null || lbl.Tag == null || !(bool)lbl.Tag || string.IsNullOrEmpty(lbl.Text))
+            {
+                return;
+            }
+
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                float fontSizePixel = lbl.Font.Size * e.Graphics.DpiY / 72f;
+
+                path.AddString(
+                    lbl.Text,
+                    lbl.Font.FontFamily,
+                    (int)lbl.Font.Style,
+                    fontSizePixel,
+                    new Rectangle(0, 0, lbl.Width, lbl.Height),
+                    new StringFormat { Alignment = StringAlignment.Near, LineAlignment = StringAlignment.Center }
+                );
+
+                using (LinearGradientBrush rainbowBrush = new LinearGradientBrush(
+                    new Rectangle(0, 0, lbl.Width, lbl.Height),
+                    Color.Red, Color.Blue, LinearGradientMode.Horizontal))
+                {
+                    ColorBlend cb = new ColorBlend();
+                    cb.Positions = new[] { 0f, 0.2f, 0.4f, 0.6f, 0.8f, 1f };
+                    cb.Colors = new[] { Color.MediumAquamarine, Color.DeepSkyBlue, Color.MediumPurple, Color.LightCoral, Color.Orange, Color.Gold };
+                    rainbowBrush.InterpolationColors = cb;
+
+                    using (Pen outlinePen = new Pen(rainbowBrush, 4) { LineJoin = LineJoin.Round })
+                    {
+                        e.Graphics.DrawPath(outlinePen, path);
+                    }
+                }
+
+                using (SolidBrush whiteBrush = new SolidBrush(Color.White))
+                {
+                    e.Graphics.FillPath(whiteBrush, path);
+                }
+            }
         }
 
         public class OverlayPanel : Panel
