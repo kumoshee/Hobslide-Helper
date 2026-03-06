@@ -64,7 +64,7 @@
             this.labelEvalR1ToSquare = new System.Windows.Forms.Label();
             this.labelGraph = new System.Windows.Forms.Label();
             this.labelGraphAverage = new System.Windows.Forms.Label();
-            this.labelCrossReset = new System.Windows.Forms.Label();
+            this.labelCrossButtonReset = new System.Windows.Forms.Label();
             this.chkCrossButtonReset = new System.Windows.Forms.CheckBox();
             this.picCrossButton2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picR1Button1)).BeginInit();
@@ -207,7 +207,7 @@
             this.cmbMode.Name = "cmbMode";
             this.cmbMode.Size = new System.Drawing.Size(120, 27);
             this.cmbMode.TabIndex = 11;
-            this.cmbMode.SelectedIndexChanged += new System.EventHandler(this.cmbMode_SelectedIndexChanged);
+            this.cmbMode.SelectedIndexChanged += new System.EventHandler(this.CmbMode_SelectedIndexChanged);
             // 
             // labelMode
             // 
@@ -438,23 +438,23 @@
             // labelGraphAverage
             // 
             this.labelGraphAverage.AutoSize = true;
-            this.labelGraphAverage.Font = new System.Drawing.Font("Noto Sans JP", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelGraphAverage.Font = new System.Drawing.Font("Noto Sans JP Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelGraphAverage.Location = new System.Drawing.Point(36, 650);
             this.labelGraphAverage.Name = "labelGraphAverage";
-            this.labelGraphAverage.Size = new System.Drawing.Size(46, 24);
+            this.labelGraphAverage.Size = new System.Drawing.Size(49, 24);
             this.labelGraphAverage.TabIndex = 37;
             this.labelGraphAverage.Text = "AVG:";
             // 
-            // labelCrossReset
+            // labelCrossButtonReset
             // 
-            this.labelCrossReset.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelCrossReset.AutoSize = true;
-            this.labelCrossReset.Font = new System.Drawing.Font("Noto Sans JP Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelCrossReset.Location = new System.Drawing.Point(390, 164);
-            this.labelCrossReset.Name = "labelCrossReset";
-            this.labelCrossReset.Size = new System.Drawing.Size(56, 24);
-            this.labelCrossReset.TabIndex = 38;
-            this.labelCrossReset.Text = "Reset";
+            this.labelCrossButtonReset.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCrossButtonReset.AutoSize = true;
+            this.labelCrossButtonReset.Font = new System.Drawing.Font("Noto Sans JP Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelCrossButtonReset.Location = new System.Drawing.Point(390, 164);
+            this.labelCrossButtonReset.Name = "labelCrossButtonReset";
+            this.labelCrossButtonReset.Size = new System.Drawing.Size(56, 24);
+            this.labelCrossButtonReset.TabIndex = 38;
+            this.labelCrossButtonReset.Text = "Reset";
             // 
             // chkCrossButtonReset
             // 
@@ -487,7 +487,7 @@
             this.ClientSize = new System.Drawing.Size(634, 811);
             this.Controls.Add(this.picCrossButton2);
             this.Controls.Add(this.chkCrossButtonReset);
-            this.Controls.Add(this.labelCrossReset);
+            this.Controls.Add(this.labelCrossButtonReset);
             this.Controls.Add(this.labelGraphAverage);
             this.Controls.Add(this.labelGraph);
             this.Controls.Add(this.labelEvalSquareToR1);
@@ -592,7 +592,7 @@
         private System.Windows.Forms.Label labelEvalR1ToSquare;
         private System.Windows.Forms.Label labelGraph;
         private System.Windows.Forms.Label labelGraphAverage;
-        private System.Windows.Forms.Label labelCrossReset;
+        private System.Windows.Forms.Label labelCrossButtonReset;
         private System.Windows.Forms.CheckBox chkCrossButtonReset;
         private System.Windows.Forms.PictureBox picCrossButton2;
     }

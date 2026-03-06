@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SharpDX.DirectInput;
@@ -66,9 +66,38 @@ namespace HobslideHelper
                 .SetValue(this, true, null);
             cmbMode.SelectedIndex = 0;
             graphRect = new Rectangle(40, 490, 540, 150);
+            LoadFont();
         }
 
-        private void cmbMode_SelectedIndexChanged(object sender, EventArgs e)
+        private void LoadFont()
+        {
+            Font mainFont = CustomFont.GetFont("Noto Sans JP Black", 15.75f);
+            Font subFont = CustomFont.GetFont("Noto Sans JP Black", 12.0f);
+            Font cmbFont = CustomFont.GetFont("Noto Sans JP", 9.75f);
+            
+            labelButtonInput.Font = mainFont;
+            labelSettings.Font = mainFont;
+            labelInputSequence.Font = mainFont;
+            labelGraph.Font = mainFont;
+            labelR1Hold.Font = mainFont;
+            labelSquareHold.Font = mainFont;
+            labelCrossHold.Font = mainFont;
+            labelR1ToSquare.Font = mainFont;
+            labelSquareToR1.Font = mainFont;
+            labelSquareToSquare.Font = mainFont;
+            labelSquareToCross.Font = mainFont;
+            labelEvalR1ToSquare.Font = mainFont;
+            labelEvalSquareToR1.Font = mainFont;
+
+            labelGraphAverage.Font = subFont;
+            labelMode.Font = subFont;
+            labelOverlay.Font = subFont;
+            labelCrossButtonReset.Font = subFont;
+
+            cmbMode.Font = cmbFont;
+        }
+
+        private void CmbMode_SelectedIndexChanged(object sender, EventArgs e)
         {
             squareToSquareHistory.Clear();
             this.Invalidate(graphRect);
@@ -354,7 +383,7 @@ namespace HobslideHelper
             crossPressed = crossNow;
 
             // 10. R1 -> □ -> R1
-            int r1SquareR1Total = r1ToSquareFrames + squareToR1Frames;
+            //int r1SquareR1Total = r1ToSquareFrames + squareToR1Frames;
 
             // Update Constant Frame Displays
             labelR1ToSquare.Text = $"{r1ToSquareFrames}F";
@@ -474,8 +503,7 @@ namespace HobslideHelper
 
         private void LabelEval_Paint(object sender, PaintEventArgs e)
         {
-            Label lbl = sender as Label;
-            if (lbl == null || lbl.Tag == null || !(bool)lbl.Tag || string.IsNullOrEmpty(lbl.Text))
+            if (!(sender is Label lbl) || lbl.Tag == null || !(bool)lbl.Tag || string.IsNullOrEmpty(lbl.Text))
             {
                 return;
             }
@@ -500,9 +528,22 @@ namespace HobslideHelper
                     new Rectangle(0, 0, lbl.Width, lbl.Height),
                     Color.Red, Color.Blue, LinearGradientMode.Horizontal))
                 {
-                    ColorBlend cb = new ColorBlend();
-                    cb.Positions = new[] { 0f, 0.2f, 0.4f, 0.6f, 0.8f, 1f };
-                    cb.Colors = new[] { Color.MediumAquamarine, Color.DeepSkyBlue, Color.MediumPurple, Color.LightCoral, Color.Orange, Color.Gold };
+                    ColorBlend cb = new ColorBlend
+                    {
+                        Positions = new[] 
+                        { 
+                            0f, 0.2f, 0.4f, 0.6f, 0.8f, 1f 
+                        },
+                        Colors = new[] 
+                        { 
+                            Color.MediumAquamarine, 
+                            Color.DeepSkyBlue, 
+                            Color.MediumPurple, 
+                            Color.LightCoral, 
+                            Color.Orange, 
+                            Color.Gold 
+                        }
+                    };
                     rainbowBrush.InterpolationColors = cb;
 
                     using (Pen outlinePen = new Pen(rainbowBrush, 4) { LineJoin = LineJoin.Round })
