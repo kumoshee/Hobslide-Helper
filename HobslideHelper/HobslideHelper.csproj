@@ -95,8 +95,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Font\NotoSansJP-Black.ttf" />
-    <EmbeddedResource Include="Font\NotoSansJP-Bold.ttf" />
+    <EmbeddedResource Include="Font\GenJyuuGothicX-Bold.ttf" />
+    <EmbeddedResource Include="Font\GenJyuuGothicX-Heavy.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

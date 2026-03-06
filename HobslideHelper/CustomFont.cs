@@ -15,8 +15,8 @@ namespace HobslideHelper
         {
             if (_pfc.Families.Length > 0) return;
 
-            LoadFontFromResource("HobslideHelper.Font.NotoSansJP-Black.ttf");
-            LoadFontFromResource("HobslideHelper.Font.NotoSansJP-Bold.ttf");
+            LoadFontFromResource("HobslideHelper.Font.GenJyuuGothicX-Heavy.ttf");
+            LoadFontFromResource("HobslideHelper.Font.GenJyuuGothicX-Bold.ttf");
         }
 
         public static Font GetFont(string familyName, float size, FontStyle style = FontStyle.Bold)

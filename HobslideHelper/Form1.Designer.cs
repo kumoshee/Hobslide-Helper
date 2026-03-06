@@ -108,23 +108,24 @@
             // 
             // labelR1Hold
             // 
-            this.labelR1Hold.AutoSize = true;
-            this.labelR1Hold.Font = new System.Drawing.Font("Noto Sans JP Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelR1Hold.Location = new System.Drawing.Point(280, 60);
+            this.labelR1Hold.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelR1Hold.Location = new System.Drawing.Point(199, 62);
             this.labelR1Hold.Name = "labelR1Hold";
-            this.labelR1Hold.Size = new System.Drawing.Size(39, 30);
+            this.labelR1Hold.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.labelR1Hold.Size = new System.Drawing.Size(120, 30);
             this.labelR1Hold.TabIndex = 2;
             this.labelR1Hold.Text = "0F";
+            this.labelR1Hold.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelSquareHold
             // 
-            this.labelSquareHold.AutoSize = true;
-            this.labelSquareHold.Font = new System.Drawing.Font("Noto Sans JP Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelSquareHold.Location = new System.Drawing.Point(280, 110);
+            this.labelSquareHold.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelSquareHold.Location = new System.Drawing.Point(204, 112);
             this.labelSquareHold.Name = "labelSquareHold";
-            this.labelSquareHold.Size = new System.Drawing.Size(39, 30);
+            this.labelSquareHold.Size = new System.Drawing.Size(115, 30);
             this.labelSquareHold.TabIndex = 5;
             this.labelSquareHold.Text = "0F";
+            this.labelSquareHold.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // picSquareState
             // 
@@ -146,13 +147,13 @@
             // 
             // labelCrossHold
             // 
-            this.labelCrossHold.AutoSize = true;
-            this.labelCrossHold.Font = new System.Drawing.Font("Noto Sans JP Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelCrossHold.Location = new System.Drawing.Point(280, 160);
+            this.labelCrossHold.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelCrossHold.Location = new System.Drawing.Point(204, 162);
             this.labelCrossHold.Name = "labelCrossHold";
-            this.labelCrossHold.Size = new System.Drawing.Size(39, 30);
+            this.labelCrossHold.Size = new System.Drawing.Size(115, 30);
             this.labelCrossHold.TabIndex = 8;
             this.labelCrossHold.Text = "0F";
+            this.labelCrossHold.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // picCrossState
             // 
@@ -175,7 +176,7 @@
             // labelButtonInput
             // 
             this.labelButtonInput.AutoSize = true;
-            this.labelButtonInput.Font = new System.Drawing.Font("Noto Sans JP Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelButtonInput.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelButtonInput.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelButtonInput.Location = new System.Drawing.Point(20, 20);
             this.labelButtonInput.Name = "labelButtonInput";
@@ -186,7 +187,7 @@
             // labelSettings
             // 
             this.labelSettings.AutoSize = true;
-            this.labelSettings.Font = new System.Drawing.Font("Noto Sans JP Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelSettings.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelSettings.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelSettings.Location = new System.Drawing.Point(345, 20);
             this.labelSettings.Name = "labelSettings";
@@ -197,7 +198,7 @@
             // cmbMode
             // 
             this.cmbMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMode.Font = new System.Drawing.Font("Noto Sans JP", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.cmbMode.Font = new System.Drawing.Font("源柔ゴシックX Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.cmbMode.FormattingEnabled = true;
             this.cmbMode.Items.AddRange(new object[] {
             "Average",
@@ -205,29 +206,27 @@
             "Slow"});
             this.cmbMode.Location = new System.Drawing.Point(460, 63);
             this.cmbMode.Name = "cmbMode";
-            this.cmbMode.Size = new System.Drawing.Size(120, 27);
+            this.cmbMode.Size = new System.Drawing.Size(120, 26);
             this.cmbMode.TabIndex = 11;
             this.cmbMode.SelectedIndexChanged += new System.EventHandler(this.CmbMode_SelectedIndexChanged);
             // 
             // labelMode
             // 
-            this.labelMode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelMode.AutoSize = true;
-            this.labelMode.Font = new System.Drawing.Font("Noto Sans JP Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelMode.Location = new System.Drawing.Point(370, 64);
+            this.labelMode.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelMode.Location = new System.Drawing.Point(370, 66);
             this.labelMode.Name = "labelMode";
-            this.labelMode.Size = new System.Drawing.Size(55, 24);
+            this.labelMode.Size = new System.Drawing.Size(53, 22);
             this.labelMode.TabIndex = 12;
             this.labelMode.Text = "Mode";
             // 
             // labelOverlay
             // 
-            this.labelOverlay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelOverlay.AutoSize = true;
-            this.labelOverlay.Font = new System.Drawing.Font("Noto Sans JP Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelOverlay.Location = new System.Drawing.Point(370, 114);
+            this.labelOverlay.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelOverlay.Location = new System.Drawing.Point(370, 116);
             this.labelOverlay.Name = "labelOverlay";
-            this.labelOverlay.Size = new System.Drawing.Size(75, 24);
+            this.labelOverlay.Size = new System.Drawing.Size(70, 22);
             this.labelOverlay.TabIndex = 13;
             this.labelOverlay.Text = "Overlay";
             // 
@@ -246,11 +245,11 @@
             // labelInputSequence
             // 
             this.labelInputSequence.AutoSize = true;
-            this.labelInputSequence.Font = new System.Drawing.Font("Noto Sans JP Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelInputSequence.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelInputSequence.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelInputSequence.Location = new System.Drawing.Point(20, 210);
             this.labelInputSequence.Name = "labelInputSequence";
-            this.labelInputSequence.Size = new System.Drawing.Size(181, 30);
+            this.labelInputSequence.Size = new System.Drawing.Size(180, 30);
             this.labelInputSequence.TabIndex = 15;
             this.labelInputSequence.Text = "Input Sequence";
             // 
@@ -310,33 +309,33 @@
             // 
             // labelR1ToSquare
             // 
-            this.labelR1ToSquare.AutoSize = true;
-            this.labelR1ToSquare.Font = new System.Drawing.Font("Noto Sans JP Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelR1ToSquare.Location = new System.Drawing.Point(280, 252);
+            this.labelR1ToSquare.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelR1ToSquare.Location = new System.Drawing.Point(204, 252);
             this.labelR1ToSquare.Name = "labelR1ToSquare";
-            this.labelR1ToSquare.Size = new System.Drawing.Size(39, 30);
+            this.labelR1ToSquare.Size = new System.Drawing.Size(115, 30);
             this.labelR1ToSquare.TabIndex = 23;
             this.labelR1ToSquare.Text = "0F";
+            this.labelR1ToSquare.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelSquareToR1
             // 
-            this.labelSquareToR1.AutoSize = true;
-            this.labelSquareToR1.Font = new System.Drawing.Font("Noto Sans JP Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelSquareToR1.Location = new System.Drawing.Point(280, 302);
+            this.labelSquareToR1.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelSquareToR1.Location = new System.Drawing.Point(204, 302);
             this.labelSquareToR1.Name = "labelSquareToR1";
-            this.labelSquareToR1.Size = new System.Drawing.Size(39, 30);
+            this.labelSquareToR1.Size = new System.Drawing.Size(115, 30);
             this.labelSquareToR1.TabIndex = 24;
             this.labelSquareToR1.Text = "0F";
+            this.labelSquareToR1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelSquareToSquare
             // 
-            this.labelSquareToSquare.AutoSize = true;
-            this.labelSquareToSquare.Font = new System.Drawing.Font("Noto Sans JP Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelSquareToSquare.Location = new System.Drawing.Point(280, 352);
+            this.labelSquareToSquare.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelSquareToSquare.Location = new System.Drawing.Point(204, 352);
             this.labelSquareToSquare.Name = "labelSquareToSquare";
-            this.labelSquareToSquare.Size = new System.Drawing.Size(39, 30);
+            this.labelSquareToSquare.Size = new System.Drawing.Size(115, 30);
             this.labelSquareToSquare.TabIndex = 28;
             this.labelSquareToSquare.Text = "0F";
+            this.labelSquareToSquare.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // picSquareToSquare2
             // 
@@ -367,13 +366,13 @@
             // 
             // labelSquareToCross
             // 
-            this.labelSquareToCross.AutoSize = true;
-            this.labelSquareToCross.Font = new System.Drawing.Font("Noto Sans JP Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelSquareToCross.Location = new System.Drawing.Point(280, 402);
+            this.labelSquareToCross.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelSquareToCross.Location = new System.Drawing.Point(204, 402);
             this.labelSquareToCross.Name = "labelSquareToCross";
-            this.labelSquareToCross.Size = new System.Drawing.Size(39, 30);
+            this.labelSquareToCross.Size = new System.Drawing.Size(115, 30);
             this.labelSquareToCross.TabIndex = 32;
             this.labelSquareToCross.Text = "0F";
+            this.labelSquareToCross.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // picSquareToCross2
             // 
@@ -405,7 +404,7 @@
             // labelEvalSquareToR1
             // 
             this.labelEvalSquareToR1.AutoSize = true;
-            this.labelEvalSquareToR1.Font = new System.Drawing.Font("Noto Sans JP Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelEvalSquareToR1.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelEvalSquareToR1.Location = new System.Drawing.Point(370, 302);
             this.labelEvalSquareToR1.Name = "labelEvalSquareToR1";
             this.labelEvalSquareToR1.Size = new System.Drawing.Size(26, 30);
@@ -416,7 +415,7 @@
             // labelEvalR1ToSquare
             // 
             this.labelEvalR1ToSquare.AutoSize = true;
-            this.labelEvalR1ToSquare.Font = new System.Drawing.Font("Noto Sans JP Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelEvalR1ToSquare.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelEvalR1ToSquare.Location = new System.Drawing.Point(370, 252);
             this.labelEvalR1ToSquare.Name = "labelEvalR1ToSquare";
             this.labelEvalR1ToSquare.Size = new System.Drawing.Size(26, 30);
@@ -427,32 +426,31 @@
             // labelGraph
             // 
             this.labelGraph.AutoSize = true;
-            this.labelGraph.Font = new System.Drawing.Font("Noto Sans JP Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelGraph.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelGraph.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelGraph.Location = new System.Drawing.Point(20, 450);
             this.labelGraph.Name = "labelGraph";
-            this.labelGraph.Size = new System.Drawing.Size(79, 30);
+            this.labelGraph.Size = new System.Drawing.Size(78, 30);
             this.labelGraph.TabIndex = 36;
             this.labelGraph.Text = "Graph";
             // 
             // labelGraphAverage
             // 
             this.labelGraphAverage.AutoSize = true;
-            this.labelGraphAverage.Font = new System.Drawing.Font("Noto Sans JP Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelGraphAverage.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelGraphAverage.Location = new System.Drawing.Point(36, 650);
             this.labelGraphAverage.Name = "labelGraphAverage";
-            this.labelGraphAverage.Size = new System.Drawing.Size(49, 24);
+            this.labelGraphAverage.Size = new System.Drawing.Size(49, 22);
             this.labelGraphAverage.TabIndex = 37;
             this.labelGraphAverage.Text = "AVG:";
             // 
             // labelCrossButtonReset
             // 
-            this.labelCrossButtonReset.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelCrossButtonReset.AutoSize = true;
-            this.labelCrossButtonReset.Font = new System.Drawing.Font("Noto Sans JP Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelCrossButtonReset.Location = new System.Drawing.Point(390, 164);
+            this.labelCrossButtonReset.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelCrossButtonReset.Location = new System.Drawing.Point(390, 166);
             this.labelCrossButtonReset.Name = "labelCrossButtonReset";
-            this.labelCrossButtonReset.Size = new System.Drawing.Size(56, 24);
+            this.labelCrossButtonReset.Size = new System.Drawing.Size(54, 22);
             this.labelCrossButtonReset.TabIndex = 38;
             this.labelCrossButtonReset.Text = "Reset";
             // 
@@ -472,7 +470,7 @@
             // picCrossButton2
             // 
             this.picCrossButton2.Image = global::HobslideHelper.Properties.Resources.cross;
-            this.picCrossButton2.Location = new System.Drawing.Point(365, 164);
+            this.picCrossButton2.Location = new System.Drawing.Point(365, 165);
             this.picCrossButton2.Name = "picCrossButton2";
             this.picCrossButton2.Size = new System.Drawing.Size(24, 24);
             this.picCrossButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

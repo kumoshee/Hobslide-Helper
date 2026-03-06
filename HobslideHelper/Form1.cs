@@ -71,9 +71,9 @@ namespace HobslideHelper
 
         private void LoadFont()
         {
-            Font mainFont = CustomFont.GetFont("Noto Sans JP Black", 15.75f);
-            Font subFont = CustomFont.GetFont("Noto Sans JP Black", 12.0f);
-            Font cmbFont = CustomFont.GetFont("Noto Sans JP", 9.75f);
+            Font mainFont = CustomFont.GetFont("源柔ゴシックX Heavy", 15.75f);
+            Font subFont = CustomFont.GetFont("源柔ゴシックX Heavy", 12.0f);
+            Font cmbFont = CustomFont.GetFont("源柔ゴシックX Bold", 9.75f);
             
             labelButtonInput.Font = mainFont;
             labelSettings.Font = mainFont;
