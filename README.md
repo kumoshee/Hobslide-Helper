@@ -1,5 +1,5 @@
 # Hobslide Helper
-This helps you practice Hobslide, which can be used in Crash Bandicoot: N Sane Trilogy.
+This helps you practice Hobslide, which can be used in Crash Bandicoot: N Sane Trilogy.  
 Your input is visualized, making it easier to identify issues and evaluate your consistency.
 
 ### Features
