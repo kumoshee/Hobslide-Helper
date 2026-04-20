@@ -90,9 +90,11 @@ namespace HobslideHelper
             labelEvalSquareToR1.Font = mainFont;
 
             labelGraphAverage.Font = subFont;
+            labelGraphTotal.Font = subFont;
             labelMode.Font = subFont;
             labelOverlay.Font = subFont;
             labelCrossButtonReset.Font = subFont;
+            btnGraphReset.Font = subFont;
 
             cmbMode.Font = cmbFont;
         }
@@ -105,6 +107,7 @@ namespace HobslideHelper
             labelEvalR1ToSquare.Text = "";
             labelEvalSquareToR1.Text = "";
             labelGraphAverage.Text = $"AVG:";
+            labelGraphTotal.Text = $"Total:";
         }
 
         private void ChkOverlay_CheckedChanged(object sender, EventArgs e)
@@ -202,6 +205,10 @@ namespace HobslideHelper
             // 平均表示
             double avg = squareToSquareHistory.Average();
             labelGraphAverage.Text = $"AVG: {avg:F2}F";
+
+            // 合計表示
+            int total = squareToSquareHistory.Count;
+            labelGraphTotal.Text = $"Total: {total}";
         }
 
         void InitializeJoystick()
@@ -358,6 +365,7 @@ namespace HobslideHelper
                     labelEvalR1ToSquare.Text = "";
                     labelEvalSquareToR1.Text = "";
                     labelGraphAverage.Text = $"AVG:";
+                    labelGraphTotal.Text = $"Total:";
                 }
 
                 // 7. □ -> ✕
@@ -576,6 +584,16 @@ namespace HobslideHelper
 
                 base.OnPaintBackground(e);
             }
+        }
+
+        private void btnGraphReset_Click(object sender, EventArgs e)
+        {
+            squareToSquareHistory.Clear();
+            this.Invalidate(graphRect);
+            labelEvalR1ToSquare.Text = "";
+            labelEvalSquareToR1.Text = "";
+            labelGraphAverage.Text = $"AVG:";
+            labelGraphTotal.Text = $"Total:";
         }
     }
 }

@@ -67,6 +67,8 @@
             this.labelCrossButtonReset = new System.Windows.Forms.Label();
             this.chkCrossButtonReset = new System.Windows.Forms.CheckBox();
             this.picCrossButton2 = new System.Windows.Forms.PictureBox();
+            this.btnGraphReset = new System.Windows.Forms.Button();
+            this.labelGraphTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picR1Button1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picR1State)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSquareState)).BeginInit();
@@ -438,7 +440,7 @@
             // 
             this.labelGraphAverage.AutoSize = true;
             this.labelGraphAverage.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelGraphAverage.Location = new System.Drawing.Point(36, 650);
+            this.labelGraphAverage.Location = new System.Drawing.Point(36, 655);
             this.labelGraphAverage.Name = "labelGraphAverage";
             this.labelGraphAverage.Size = new System.Drawing.Size(49, 22);
             this.labelGraphAverage.TabIndex = 37;
@@ -477,12 +479,36 @@
             this.picCrossButton2.TabIndex = 40;
             this.picCrossButton2.TabStop = false;
             // 
+            // btnGraphReset
+            // 
+            this.btnGraphReset.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnGraphReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnGraphReset.Location = new System.Drawing.Point(460, 650);
+            this.btnGraphReset.Name = "btnGraphReset";
+            this.btnGraphReset.Size = new System.Drawing.Size(90, 30);
+            this.btnGraphReset.TabIndex = 41;
+            this.btnGraphReset.Text = "Reset";
+            this.btnGraphReset.UseVisualStyleBackColor = true;
+            this.btnGraphReset.Click += new System.EventHandler(this.btnGraphReset_Click);
+            // 
+            // labelGraphTotal
+            // 
+            this.labelGraphTotal.AutoSize = true;
+            this.labelGraphTotal.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelGraphTotal.Location = new System.Drawing.Point(262, 655);
+            this.labelGraphTotal.Name = "labelGraphTotal";
+            this.labelGraphTotal.Size = new System.Drawing.Size(57, 22);
+            this.labelGraphTotal.TabIndex = 42;
+            this.labelGraphTotal.Text = "Total:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(634, 811);
+            this.Controls.Add(this.labelGraphTotal);
+            this.Controls.Add(this.btnGraphReset);
             this.Controls.Add(this.picCrossButton2);
             this.Controls.Add(this.chkCrossButtonReset);
             this.Controls.Add(this.labelCrossButtonReset);
@@ -593,6 +619,8 @@
         private System.Windows.Forms.Label labelCrossButtonReset;
         private System.Windows.Forms.CheckBox chkCrossButtonReset;
         private System.Windows.Forms.PictureBox picCrossButton2;
+        private System.Windows.Forms.Button btnGraphReset;
+        private System.Windows.Forms.Label labelGraphTotal;
     }
 }
 
