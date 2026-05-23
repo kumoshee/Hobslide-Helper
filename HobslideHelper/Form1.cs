@@ -41,6 +41,7 @@ namespace HobslideHelper
         int r1ToSquareFrames = 0; // [4] R1 -> □
         int squareToR1Frames = 0; // [5] □ -> R1
         int squareToCrossFrames = 0; // [6] □ -> ✕ 
+        int r1ToR1Frames = 0; // [7] R1 -> R1
         int squareToSquareFrames = 0; // [8] □ -> □
         
         int lastR1PressFrame = 0;
