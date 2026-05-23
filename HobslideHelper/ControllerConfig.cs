@@ -5,11 +5,20 @@ namespace HobslideHelper
 {
     public class ControllerConfig
     {
+        public InputBackend R1Backend { get; set; }
+        public string R1DeviceGuid { get; set; }
         public int R1Button { get; set; }
+
+        public InputBackend SquareBackend { get; set; }
+        public string SquareDeviceGuid { get; set; }
         public int SquareButton { get; set; }
+
+        public InputBackend CrossBackend { get; set; }
+        public string CrossDeviceGuid { get; set; }
         public int CrossButton { get; set; }
 
-        public static string ConfigPath => "controller_config.json";
+        public static string ConfigPath =>
+            "controller_config.json";
 
         public static ControllerConfig Load()
         {
@@ -20,7 +29,8 @@ namespace HobslideHelper
                     return CreateDefault();
                 }
 
-                string json = File.ReadAllText(ConfigPath);
+                string json =
+                    File.ReadAllText(ConfigPath);
 
                 return JsonConvert.DeserializeObject<ControllerConfig>(json);
             }
@@ -32,7 +42,10 @@ namespace HobslideHelper
 
         public void Save()
         {
-            string json = JsonConvert.SerializeObject(this, Formatting.Indented);
+            string json =
+                JsonConvert.SerializeObject(
+                    this,
+                    Formatting.Indented);
 
             File.WriteAllText(ConfigPath, json);
         }
@@ -41,8 +54,16 @@ namespace HobslideHelper
         {
             return new ControllerConfig
             {
+                R1Backend = InputBackend.DirectInput,
+                R1DeviceGuid = "",
                 R1Button = 5,
+
+                SquareBackend = InputBackend.DirectInput,
+                SquareDeviceGuid = "",
                 SquareButton = 0,
+
+                CrossBackend = InputBackend.DirectInput,
+                CrossDeviceGuid = "",
                 CrossButton = 1
             };
         }

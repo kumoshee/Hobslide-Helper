@@ -41,7 +41,6 @@ namespace HobslideHelper
         int r1ToSquareFrames = 0; // [4] R1 -> □
         int squareToR1Frames = 0; // [5] □ -> R1
         int squareToCrossFrames = 0; // [6] □ -> ✕ 
-        int r1ToR1Frames = 0; // [7] R1 -> R1
         int squareToSquareFrames = 0; // [8] □ -> □
         
         int lastR1PressFrame = 0;
@@ -68,37 +67,6 @@ namespace HobslideHelper
                 .SetValue(this, true, null);
             cmbMode.SelectedIndex = 0;
             graphRect = new Rectangle(40, 540, 540, 150);
-            LoadFont();
-        }
-
-        private void LoadFont()
-        {
-            Font mainFont = CustomFont.GetFont("源柔ゴシックX Heavy", 15.75f);
-            Font subFont = CustomFont.GetFont("源柔ゴシックX Heavy", 12.0f);
-            Font cmbFont = CustomFont.GetFont("源柔ゴシックX Bold", 9.75f);
-            
-            labelButtonInput.Font = mainFont;
-            labelSettings.Font = mainFont;
-            labelInputSequence.Font = mainFont;
-            labelGraph.Font = mainFont;
-            labelR1Hold.Font = mainFont;
-            labelSquareHold.Font = mainFont;
-            labelCrossHold.Font = mainFont;
-            labelR1ToSquare.Font = mainFont;
-            labelSquareToR1.Font = mainFont;
-            labelSquareToSquare.Font = mainFont;
-            labelSquareToCross.Font = mainFont;
-            labelEvalR1ToSquare.Font = mainFont;
-            labelEvalSquareToR1.Font = mainFont;
-
-            labelGraphAverage.Font = subFont;
-            labelGraphTotal.Font = subFont;
-            labelMode.Font = subFont;
-            labelOverlay.Font = subFont;
-            labelCrossButtonReset.Font = subFont;
-            btnGraphReset.Font = subFont;
-
-            cmbMode.Font = cmbFont;
         }
 
         private void CmbMode_SelectedIndexChanged(object sender, EventArgs e)
@@ -223,54 +191,33 @@ namespace HobslideHelper
                 return;
             }
 
-            // デフォルト割り当て
+            ReloadInputConfig();
+        }
 
-            if (inputManager.CurrentBackend == InputBackend.XInput)
-            {
-                r1Button = new InputButton
-                {
-                    Backend = InputBackend.XInput,
-                    ButtonIndex = 2
-                };
-
-                squareButton = new InputButton
-                {
-                    Backend = InputBackend.XInput,
-                    ButtonIndex = 0
-                };
-
-                crossButton = new InputButton
-                {
-                    Backend = InputBackend.XInput,
-                    ButtonIndex = 1
-                };
-            }
-            else
-            {
-                r1Button = new InputButton
-                {
-                    Backend = InputBackend.DirectInput,
-                    ButtonIndex = 5
-                };
-
-                squareButton = new InputButton
-                {
-                    Backend = InputBackend.DirectInput,
-                    ButtonIndex = 0
-                };
-
-                crossButton = new InputButton
-                {
-                    Backend = InputBackend.DirectInput,
-                    ButtonIndex = 1
-                };
-            }
-
+        void ReloadInputConfig()
+        {
             config = ControllerConfig.Load();
 
-            r1Button.ButtonIndex = config.R1Button;
-            squareButton.ButtonIndex = config.SquareButton;
-            crossButton.ButtonIndex = config.CrossButton;
+            r1Button = new InputButton
+            {
+                Backend = config.R1Backend,
+                DeviceGuid = config.R1DeviceGuid,
+                ButtonIndex = config.R1Button
+            };
+
+            squareButton = new InputButton
+            {
+                Backend = config.SquareBackend,
+                DeviceGuid = config.SquareDeviceGuid,
+                ButtonIndex = config.SquareButton
+            };
+
+            crossButton = new InputButton
+            {
+                Backend = config.CrossBackend,
+                DeviceGuid = config.CrossDeviceGuid,
+                ButtonIndex = config.CrossButton
+            };
         }
 
         async void StartGameLoop()
@@ -625,11 +572,7 @@ namespace HobslideHelper
 
             form.ShowDialog();
 
-            config = form.GetConfig();
-
-            r1Button.ButtonIndex = config.R1Button;
-            squareButton.ButtonIndex = config.SquareButton;
-            crossButton.ButtonIndex = config.CrossButton;
+            ReloadInputConfig();
         }
     }
 }

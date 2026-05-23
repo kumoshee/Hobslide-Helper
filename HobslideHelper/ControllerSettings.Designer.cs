@@ -38,7 +38,6 @@
             this.btnR1 = new System.Windows.Forms.Button();
             this.btnSquare = new System.Windows.Forms.Button();
             this.btnCross = new System.Windows.Forms.Button();
-            this.btnReload = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picCrossButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSquareButton1)).BeginInit();
@@ -52,9 +51,9 @@
             this.lblR1.ForeColor = System.Drawing.Color.White;
             this.lblR1.Location = new System.Drawing.Point(130, 44);
             this.lblR1.Name = "lblR1";
-            this.lblR1.Size = new System.Drawing.Size(74, 22);
+            this.lblR1.Size = new System.Drawing.Size(69, 22);
             this.lblR1.TabIndex = 13;
-            this.lblR1.Text = "Button: ";
+            this.lblR1.Text = "Button ";
             // 
             // lblSquare
             // 
@@ -63,9 +62,9 @@
             this.lblSquare.ForeColor = System.Drawing.Color.White;
             this.lblSquare.Location = new System.Drawing.Point(130, 94);
             this.lblSquare.Name = "lblSquare";
-            this.lblSquare.Size = new System.Drawing.Size(74, 22);
+            this.lblSquare.Size = new System.Drawing.Size(69, 22);
             this.lblSquare.TabIndex = 14;
-            this.lblSquare.Text = "Button: ";
+            this.lblSquare.Text = "Button ";
             // 
             // lblCross
             // 
@@ -74,9 +73,9 @@
             this.lblCross.ForeColor = System.Drawing.Color.White;
             this.lblCross.Location = new System.Drawing.Point(130, 144);
             this.lblCross.Name = "lblCross";
-            this.lblCross.Size = new System.Drawing.Size(74, 22);
+            this.lblCross.Size = new System.Drawing.Size(69, 22);
             this.lblCross.TabIndex = 15;
-            this.lblCross.Text = "Button: ";
+            this.lblCross.Text = "Button ";
             // 
             // picCrossButton1
             // 
@@ -107,14 +106,13 @@
             // 
             // lblStatus
             // 
-            this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblStatus.ForeColor = System.Drawing.Color.White;
             this.lblStatus.Location = new System.Drawing.Point(40, 260);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(61, 22);
+            this.lblStatus.Size = new System.Drawing.Size(250, 22);
             this.lblStatus.TabIndex = 19;
-            this.lblStatus.Text = "Status";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnR1
             // 
@@ -126,7 +124,7 @@
             this.btnR1.TabIndex = 45;
             this.btnR1.Text = "…";
             this.btnR1.UseVisualStyleBackColor = true;
-            this.btnR1.Click += new System.EventHandler(this.btnR1_Click);
+            this.btnR1.Click += new System.EventHandler(this.BtnR1_Click);
             // 
             // btnSquare
             // 
@@ -138,7 +136,7 @@
             this.btnSquare.TabIndex = 46;
             this.btnSquare.Text = "…";
             this.btnSquare.UseVisualStyleBackColor = true;
-            this.btnSquare.Click += new System.EventHandler(this.btnSquare_Click);
+            this.btnSquare.Click += new System.EventHandler(this.BtnSquare_Click);
             // 
             // btnCross
             // 
@@ -150,40 +148,27 @@
             this.btnCross.TabIndex = 47;
             this.btnCross.Text = "…";
             this.btnCross.UseVisualStyleBackColor = true;
-            this.btnCross.Click += new System.EventHandler(this.btnCross_Click);
-            // 
-            // btnReload
-            // 
-            this.btnReload.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnReload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnReload.Location = new System.Drawing.Point(60, 200);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(80, 30);
-            this.btnReload.TabIndex = 48;
-            this.btnReload.Text = "Reload";
-            this.btnReload.UseVisualStyleBackColor = true;
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            this.btnCross.Click += new System.EventHandler(this.BtnCross_Click);
             // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnSave.Location = new System.Drawing.Point(190, 200);
+            this.btnSave.Location = new System.Drawing.Point(210, 200);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 30);
             this.btnSave.TabIndex = 49;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // ControllerSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(324, 381);
+            this.ClientSize = new System.Drawing.Size(324, 321);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnCross);
             this.Controls.Add(this.btnSquare);
             this.Controls.Add(this.btnR1);
@@ -216,7 +201,6 @@
         private System.Windows.Forms.Button btnR1;
         private System.Windows.Forms.Button btnSquare;
         private System.Windows.Forms.Button btnCross;
-        private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button btnSave;
     }
 }

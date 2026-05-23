@@ -35,9 +35,14 @@ namespace HobslideHelper
 
         void RefreshLabels()
         {
-            lblR1.Text = $"Button: {config.R1Button}";
-            lblSquare.Text = $"Button: {config.SquareButton}";
-            lblCross.Text = $"Button: {config.CrossButton}";
+            lblR1.Text =
+                $"Button {config.R1Button}";
+
+            lblSquare.Text =
+                $"Button {config.SquareButton}";
+
+            lblCross.Text =
+                $"Button {config.CrossButton}";
         }
 
         async Task WaitButtonAsync()
@@ -48,26 +53,42 @@ namespace HobslideHelper
 
             while (waitingInput)
             {
-                if (inputManager.IsAnyButtonPressed(out int btn))
+                if (inputManager.IsAnyButtonPressed(
+                    out InputBackend backend,
+                    out string deviceGuid,
+                    out int buttonIndex))
                 {
                     switch (waitingType)
                     {
                         case WaitingType.R1:
-                            config.R1Button = btn;
+
+                            config.R1Backend = backend;
+                            config.R1DeviceGuid = deviceGuid;
+                            config.R1Button = buttonIndex;
+
                             break;
 
                         case WaitingType.Square:
-                            config.SquareButton = btn;
+
+                            config.SquareBackend = backend;
+                            config.SquareDeviceGuid = deviceGuid;
+                            config.SquareButton = buttonIndex;
+
                             break;
 
                         case WaitingType.Cross:
-                            config.CrossButton = btn;
+
+                            config.CrossBackend = backend;
+                            config.CrossDeviceGuid = deviceGuid;
+                            config.CrossButton = buttonIndex;
+
                             break;
                     }
 
                     RefreshLabels();
 
-                    lblStatus.Text = $"Assigned Button: {btn}";
+                    lblStatus.Text =
+                        $"Assigned Button {buttonIndex}";
 
                     waitingInput = false;
 
@@ -78,34 +99,25 @@ namespace HobslideHelper
             }
         }
 
-        private async void btnR1_Click(object sender, EventArgs e)
+        private async void BtnR1_Click(object sender, EventArgs e)
         {
             waitingType = WaitingType.R1;
             await WaitButtonAsync();
         }
 
-        private async void btnSquare_Click(object sender, EventArgs e)
+        private async void BtnSquare_Click(object sender, EventArgs e)
         {
             waitingType = WaitingType.Square;
             await WaitButtonAsync();
         }
 
-        private async void btnCross_Click(object sender, EventArgs e)
+        private async void BtnCross_Click(object sender, EventArgs e)
         {
             waitingType = WaitingType.Cross;
             await WaitButtonAsync();
         }
 
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-            bool ok = inputManager.Reload();
-
-            lblStatus.Text = ok
-                ? "Controller reloaded"
-                : "Controller not found";
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             config.Save();
 
