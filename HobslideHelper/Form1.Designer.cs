@@ -28,15 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.picR1Button1 = new System.Windows.Forms.PictureBox();
-            this.picR1State = new System.Windows.Forms.PictureBox();
             this.labelR1Hold = new System.Windows.Forms.Label();
             this.labelSquareHold = new System.Windows.Forms.Label();
-            this.picSquareState = new System.Windows.Forms.PictureBox();
-            this.picSquareButton1 = new System.Windows.Forms.PictureBox();
             this.labelCrossHold = new System.Windows.Forms.Label();
-            this.picCrossState = new System.Windows.Forms.PictureBox();
-            this.picCrossButton1 = new System.Windows.Forms.PictureBox();
             this.labelButtonInput = new System.Windows.Forms.Label();
             this.labelSettings = new System.Windows.Forms.Label();
             this.cmbMode = new System.Windows.Forms.ComboBox();
@@ -44,69 +38,58 @@
             this.labelOverlay = new System.Windows.Forms.Label();
             this.chkOverlay = new System.Windows.Forms.CheckBox();
             this.labelInputSequence = new System.Windows.Forms.Label();
-            this.picR1ToSquare_3 = new System.Windows.Forms.PictureBox();
-            this.picR1ToSquare_1 = new System.Windows.Forms.PictureBox();
-            this.picR1ToSquare_2 = new System.Windows.Forms.PictureBox();
-            this.picSquareToR1_2 = new System.Windows.Forms.PictureBox();
-            this.picSquareToR1_3 = new System.Windows.Forms.PictureBox();
-            this.picSquareToR1_1 = new System.Windows.Forms.PictureBox();
             this.labelR1ToSquare = new System.Windows.Forms.Label();
             this.labelSquareToR1 = new System.Windows.Forms.Label();
             this.labelSquareToSquare = new System.Windows.Forms.Label();
-            this.picSquareToSquare2 = new System.Windows.Forms.PictureBox();
-            this.picSquareToSquare3 = new System.Windows.Forms.PictureBox();
-            this.picSquareToSquare1 = new System.Windows.Forms.PictureBox();
             this.labelSquareToCross = new System.Windows.Forms.Label();
-            this.picSquareToCross2 = new System.Windows.Forms.PictureBox();
-            this.picSquareToCross3 = new System.Windows.Forms.PictureBox();
-            this.picSquareToCross1 = new System.Windows.Forms.PictureBox();
             this.labelEvalSquareToR1 = new System.Windows.Forms.Label();
             this.labelEvalR1ToSquare = new System.Windows.Forms.Label();
             this.labelGraph = new System.Windows.Forms.Label();
             this.labelGraphAverage = new System.Windows.Forms.Label();
             this.labelCrossButtonReset = new System.Windows.Forms.Label();
             this.chkCrossButtonReset = new System.Windows.Forms.CheckBox();
-            this.picCrossButton2 = new System.Windows.Forms.PictureBox();
             this.btnGraphReset = new System.Windows.Forms.Button();
             this.labelGraphTotal = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picR1Button1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picR1State)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareState)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCrossState)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCrossButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picR1ToSquare_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picR1ToSquare_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picR1ToSquare_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareToR1_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareToR1_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareToR1_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareToSquare2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareToSquare3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareToSquare1)).BeginInit();
+            this.btnControllerSettings = new System.Windows.Forms.Button();
+            this.picCrossButton2 = new System.Windows.Forms.PictureBox();
+            this.picSquareToCross2 = new System.Windows.Forms.PictureBox();
+            this.picSquareToCross3 = new System.Windows.Forms.PictureBox();
+            this.picSquareToCross1 = new System.Windows.Forms.PictureBox();
+            this.picSquareToSquare2 = new System.Windows.Forms.PictureBox();
+            this.picSquareToSquare3 = new System.Windows.Forms.PictureBox();
+            this.picSquareToSquare1 = new System.Windows.Forms.PictureBox();
+            this.picSquareToR1_2 = new System.Windows.Forms.PictureBox();
+            this.picSquareToR1_3 = new System.Windows.Forms.PictureBox();
+            this.picSquareToR1_1 = new System.Windows.Forms.PictureBox();
+            this.picR1ToSquare_2 = new System.Windows.Forms.PictureBox();
+            this.picR1ToSquare_3 = new System.Windows.Forms.PictureBox();
+            this.picR1ToSquare_1 = new System.Windows.Forms.PictureBox();
+            this.picCrossState = new System.Windows.Forms.PictureBox();
+            this.picCrossButton1 = new System.Windows.Forms.PictureBox();
+            this.picSquareState = new System.Windows.Forms.PictureBox();
+            this.picSquareButton1 = new System.Windows.Forms.PictureBox();
+            this.picR1State = new System.Windows.Forms.PictureBox();
+            this.picR1Button1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picCrossButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSquareToCross2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSquareToCross3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSquareToCross1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCrossButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareToSquare2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareToSquare3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareToSquare1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareToR1_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareToR1_3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareToR1_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picR1ToSquare_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picR1ToSquare_3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picR1ToSquare_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCrossState)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCrossButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareState)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picR1State)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picR1Button1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picR1Button1
-            // 
-            this.picR1Button1.Image = global::HobslideHelper.Properties.Resources.r1;
-            this.picR1Button1.Location = new System.Drawing.Point(40, 60);
-            this.picR1Button1.Name = "picR1Button1";
-            this.picR1Button1.Size = new System.Drawing.Size(32, 32);
-            this.picR1Button1.TabIndex = 0;
-            this.picR1Button1.TabStop = false;
-            // 
-            // picR1State
-            // 
-            this.picR1State.Image = global::HobslideHelper.Properties.Resources.off;
-            this.picR1State.Location = new System.Drawing.Point(90, 60);
-            this.picR1State.Name = "picR1State";
-            this.picR1State.Size = new System.Drawing.Size(32, 32);
-            this.picR1State.TabIndex = 1;
-            this.picR1State.TabStop = false;
             // 
             // labelR1Hold
             // 
@@ -129,24 +112,6 @@
             this.labelSquareHold.Text = "0F";
             this.labelSquareHold.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // picSquareState
-            // 
-            this.picSquareState.Image = global::HobslideHelper.Properties.Resources.off;
-            this.picSquareState.Location = new System.Drawing.Point(90, 110);
-            this.picSquareState.Name = "picSquareState";
-            this.picSquareState.Size = new System.Drawing.Size(32, 32);
-            this.picSquareState.TabIndex = 4;
-            this.picSquareState.TabStop = false;
-            // 
-            // picSquareButton1
-            // 
-            this.picSquareButton1.Image = global::HobslideHelper.Properties.Resources.square;
-            this.picSquareButton1.Location = new System.Drawing.Point(40, 110);
-            this.picSquareButton1.Name = "picSquareButton1";
-            this.picSquareButton1.Size = new System.Drawing.Size(32, 32);
-            this.picSquareButton1.TabIndex = 3;
-            this.picSquareButton1.TabStop = false;
-            // 
             // labelCrossHold
             // 
             this.labelCrossHold.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -156,24 +121,6 @@
             this.labelCrossHold.TabIndex = 8;
             this.labelCrossHold.Text = "0F";
             this.labelCrossHold.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // picCrossState
-            // 
-            this.picCrossState.Image = global::HobslideHelper.Properties.Resources.off;
-            this.picCrossState.Location = new System.Drawing.Point(90, 160);
-            this.picCrossState.Name = "picCrossState";
-            this.picCrossState.Size = new System.Drawing.Size(32, 32);
-            this.picCrossState.TabIndex = 7;
-            this.picCrossState.TabStop = false;
-            // 
-            // picCrossButton1
-            // 
-            this.picCrossButton1.Image = global::HobslideHelper.Properties.Resources.cross;
-            this.picCrossButton1.Location = new System.Drawing.Point(40, 160);
-            this.picCrossButton1.Name = "picCrossButton1";
-            this.picCrossButton1.Size = new System.Drawing.Size(32, 32);
-            this.picCrossButton1.TabIndex = 6;
-            this.picCrossButton1.TabStop = false;
             // 
             // labelButtonInput
             // 
@@ -249,70 +196,16 @@
             this.labelInputSequence.AutoSize = true;
             this.labelInputSequence.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelInputSequence.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.labelInputSequence.Location = new System.Drawing.Point(20, 210);
+            this.labelInputSequence.Location = new System.Drawing.Point(20, 260);
             this.labelInputSequence.Name = "labelInputSequence";
             this.labelInputSequence.Size = new System.Drawing.Size(180, 30);
             this.labelInputSequence.TabIndex = 15;
             this.labelInputSequence.Text = "Input Sequence";
             // 
-            // picR1ToSquare_3
-            // 
-            this.picR1ToSquare_3.Image = global::HobslideHelper.Properties.Resources.square;
-            this.picR1ToSquare_3.Location = new System.Drawing.Point(120, 250);
-            this.picR1ToSquare_3.Name = "picR1ToSquare_3";
-            this.picR1ToSquare_3.Size = new System.Drawing.Size(32, 32);
-            this.picR1ToSquare_3.TabIndex = 17;
-            this.picR1ToSquare_3.TabStop = false;
-            // 
-            // picR1ToSquare_1
-            // 
-            this.picR1ToSquare_1.Image = global::HobslideHelper.Properties.Resources.r1;
-            this.picR1ToSquare_1.Location = new System.Drawing.Point(40, 250);
-            this.picR1ToSquare_1.Name = "picR1ToSquare_1";
-            this.picR1ToSquare_1.Size = new System.Drawing.Size(32, 32);
-            this.picR1ToSquare_1.TabIndex = 16;
-            this.picR1ToSquare_1.TabStop = false;
-            // 
-            // picR1ToSquare_2
-            // 
-            this.picR1ToSquare_2.Image = global::HobslideHelper.Properties.Resources.arrow;
-            this.picR1ToSquare_2.Location = new System.Drawing.Point(80, 250);
-            this.picR1ToSquare_2.Name = "picR1ToSquare_2";
-            this.picR1ToSquare_2.Size = new System.Drawing.Size(32, 32);
-            this.picR1ToSquare_2.TabIndex = 19;
-            this.picR1ToSquare_2.TabStop = false;
-            // 
-            // picSquareToR1_2
-            // 
-            this.picSquareToR1_2.Image = global::HobslideHelper.Properties.Resources.arrow;
-            this.picSquareToR1_2.Location = new System.Drawing.Point(80, 300);
-            this.picSquareToR1_2.Name = "picSquareToR1_2";
-            this.picSquareToR1_2.Size = new System.Drawing.Size(32, 32);
-            this.picSquareToR1_2.TabIndex = 22;
-            this.picSquareToR1_2.TabStop = false;
-            // 
-            // picSquareToR1_3
-            // 
-            this.picSquareToR1_3.Image = global::HobslideHelper.Properties.Resources.r1;
-            this.picSquareToR1_3.Location = new System.Drawing.Point(120, 300);
-            this.picSquareToR1_3.Name = "picSquareToR1_3";
-            this.picSquareToR1_3.Size = new System.Drawing.Size(32, 32);
-            this.picSquareToR1_3.TabIndex = 21;
-            this.picSquareToR1_3.TabStop = false;
-            // 
-            // picSquareToR1_1
-            // 
-            this.picSquareToR1_1.Image = global::HobslideHelper.Properties.Resources.square;
-            this.picSquareToR1_1.Location = new System.Drawing.Point(40, 300);
-            this.picSquareToR1_1.Name = "picSquareToR1_1";
-            this.picSquareToR1_1.Size = new System.Drawing.Size(32, 32);
-            this.picSquareToR1_1.TabIndex = 20;
-            this.picSquareToR1_1.TabStop = false;
-            // 
             // labelR1ToSquare
             // 
             this.labelR1ToSquare.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelR1ToSquare.Location = new System.Drawing.Point(204, 252);
+            this.labelR1ToSquare.Location = new System.Drawing.Point(204, 302);
             this.labelR1ToSquare.Name = "labelR1ToSquare";
             this.labelR1ToSquare.Size = new System.Drawing.Size(115, 30);
             this.labelR1ToSquare.TabIndex = 23;
@@ -322,7 +215,7 @@
             // labelSquareToR1
             // 
             this.labelSquareToR1.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelSquareToR1.Location = new System.Drawing.Point(204, 302);
+            this.labelSquareToR1.Location = new System.Drawing.Point(204, 352);
             this.labelSquareToR1.Name = "labelSquareToR1";
             this.labelSquareToR1.Size = new System.Drawing.Size(115, 30);
             this.labelSquareToR1.TabIndex = 24;
@@ -332,82 +225,28 @@
             // labelSquareToSquare
             // 
             this.labelSquareToSquare.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelSquareToSquare.Location = new System.Drawing.Point(204, 352);
+            this.labelSquareToSquare.Location = new System.Drawing.Point(204, 402);
             this.labelSquareToSquare.Name = "labelSquareToSquare";
             this.labelSquareToSquare.Size = new System.Drawing.Size(115, 30);
             this.labelSquareToSquare.TabIndex = 28;
             this.labelSquareToSquare.Text = "0F";
             this.labelSquareToSquare.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // picSquareToSquare2
-            // 
-            this.picSquareToSquare2.Image = global::HobslideHelper.Properties.Resources.arrow;
-            this.picSquareToSquare2.Location = new System.Drawing.Point(80, 350);
-            this.picSquareToSquare2.Name = "picSquareToSquare2";
-            this.picSquareToSquare2.Size = new System.Drawing.Size(32, 32);
-            this.picSquareToSquare2.TabIndex = 27;
-            this.picSquareToSquare2.TabStop = false;
-            // 
-            // picSquareToSquare3
-            // 
-            this.picSquareToSquare3.Image = global::HobslideHelper.Properties.Resources.square;
-            this.picSquareToSquare3.Location = new System.Drawing.Point(120, 350);
-            this.picSquareToSquare3.Name = "picSquareToSquare3";
-            this.picSquareToSquare3.Size = new System.Drawing.Size(32, 32);
-            this.picSquareToSquare3.TabIndex = 26;
-            this.picSquareToSquare3.TabStop = false;
-            // 
-            // picSquareToSquare1
-            // 
-            this.picSquareToSquare1.Image = global::HobslideHelper.Properties.Resources.square;
-            this.picSquareToSquare1.Location = new System.Drawing.Point(40, 350);
-            this.picSquareToSquare1.Name = "picSquareToSquare1";
-            this.picSquareToSquare1.Size = new System.Drawing.Size(32, 32);
-            this.picSquareToSquare1.TabIndex = 25;
-            this.picSquareToSquare1.TabStop = false;
-            // 
             // labelSquareToCross
             // 
             this.labelSquareToCross.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelSquareToCross.Location = new System.Drawing.Point(204, 402);
+            this.labelSquareToCross.Location = new System.Drawing.Point(204, 452);
             this.labelSquareToCross.Name = "labelSquareToCross";
             this.labelSquareToCross.Size = new System.Drawing.Size(115, 30);
             this.labelSquareToCross.TabIndex = 32;
             this.labelSquareToCross.Text = "0F";
             this.labelSquareToCross.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // picSquareToCross2
-            // 
-            this.picSquareToCross2.Image = global::HobslideHelper.Properties.Resources.arrow;
-            this.picSquareToCross2.Location = new System.Drawing.Point(80, 400);
-            this.picSquareToCross2.Name = "picSquareToCross2";
-            this.picSquareToCross2.Size = new System.Drawing.Size(32, 32);
-            this.picSquareToCross2.TabIndex = 31;
-            this.picSquareToCross2.TabStop = false;
-            // 
-            // picSquareToCross3
-            // 
-            this.picSquareToCross3.Image = global::HobslideHelper.Properties.Resources.cross;
-            this.picSquareToCross3.Location = new System.Drawing.Point(120, 400);
-            this.picSquareToCross3.Name = "picSquareToCross3";
-            this.picSquareToCross3.Size = new System.Drawing.Size(32, 32);
-            this.picSquareToCross3.TabIndex = 30;
-            this.picSquareToCross3.TabStop = false;
-            // 
-            // picSquareToCross1
-            // 
-            this.picSquareToCross1.Image = global::HobslideHelper.Properties.Resources.square;
-            this.picSquareToCross1.Location = new System.Drawing.Point(40, 400);
-            this.picSquareToCross1.Name = "picSquareToCross1";
-            this.picSquareToCross1.Size = new System.Drawing.Size(32, 32);
-            this.picSquareToCross1.TabIndex = 29;
-            this.picSquareToCross1.TabStop = false;
-            // 
             // labelEvalSquareToR1
             // 
             this.labelEvalSquareToR1.AutoSize = true;
             this.labelEvalSquareToR1.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelEvalSquareToR1.Location = new System.Drawing.Point(370, 302);
+            this.labelEvalSquareToR1.Location = new System.Drawing.Point(370, 352);
             this.labelEvalSquareToR1.Name = "labelEvalSquareToR1";
             this.labelEvalSquareToR1.Size = new System.Drawing.Size(26, 30);
             this.labelEvalSquareToR1.TabIndex = 34;
@@ -418,7 +257,7 @@
             // 
             this.labelEvalR1ToSquare.AutoSize = true;
             this.labelEvalR1ToSquare.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelEvalR1ToSquare.Location = new System.Drawing.Point(370, 252);
+            this.labelEvalR1ToSquare.Location = new System.Drawing.Point(370, 302);
             this.labelEvalR1ToSquare.Name = "labelEvalR1ToSquare";
             this.labelEvalR1ToSquare.Size = new System.Drawing.Size(26, 30);
             this.labelEvalR1ToSquare.TabIndex = 33;
@@ -430,7 +269,7 @@
             this.labelGraph.AutoSize = true;
             this.labelGraph.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelGraph.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.labelGraph.Location = new System.Drawing.Point(20, 450);
+            this.labelGraph.Location = new System.Drawing.Point(20, 500);
             this.labelGraph.Name = "labelGraph";
             this.labelGraph.Size = new System.Drawing.Size(78, 30);
             this.labelGraph.TabIndex = 36;
@@ -440,7 +279,7 @@
             // 
             this.labelGraphAverage.AutoSize = true;
             this.labelGraphAverage.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelGraphAverage.Location = new System.Drawing.Point(36, 655);
+            this.labelGraphAverage.Location = new System.Drawing.Point(36, 705);
             this.labelGraphAverage.Name = "labelGraphAverage";
             this.labelGraphAverage.Size = new System.Drawing.Size(49, 22);
             this.labelGraphAverage.TabIndex = 37;
@@ -469,6 +308,40 @@
             this.chkCrossButtonReset.TabIndex = 39;
             this.chkCrossButtonReset.UseVisualStyleBackColor = true;
             // 
+            // btnGraphReset
+            // 
+            this.btnGraphReset.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnGraphReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnGraphReset.Location = new System.Drawing.Point(460, 700);
+            this.btnGraphReset.Name = "btnGraphReset";
+            this.btnGraphReset.Size = new System.Drawing.Size(90, 30);
+            this.btnGraphReset.TabIndex = 41;
+            this.btnGraphReset.Text = "Reset";
+            this.btnGraphReset.UseVisualStyleBackColor = true;
+            this.btnGraphReset.Click += new System.EventHandler(this.BtnGraphReset_Click);
+            // 
+            // labelGraphTotal
+            // 
+            this.labelGraphTotal.AutoSize = true;
+            this.labelGraphTotal.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelGraphTotal.Location = new System.Drawing.Point(262, 705);
+            this.labelGraphTotal.Name = "labelGraphTotal";
+            this.labelGraphTotal.Size = new System.Drawing.Size(57, 22);
+            this.labelGraphTotal.TabIndex = 42;
+            this.labelGraphTotal.Text = "Total:";
+            // 
+            // btnControllerSettings
+            // 
+            this.btnControllerSettings.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnControllerSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnControllerSettings.Location = new System.Drawing.Point(400, 213);
+            this.btnControllerSettings.Name = "btnControllerSettings";
+            this.btnControllerSettings.Size = new System.Drawing.Size(180, 30);
+            this.btnControllerSettings.TabIndex = 44;
+            this.btnControllerSettings.Text = "Controller Settings";
+            this.btnControllerSettings.UseVisualStyleBackColor = true;
+            this.btnControllerSettings.Click += new System.EventHandler(this.BtnControllerSettings_Click);
+            // 
             // picCrossButton2
             // 
             this.picCrossButton2.Image = global::HobslideHelper.Properties.Resources.cross;
@@ -479,27 +352,167 @@
             this.picCrossButton2.TabIndex = 40;
             this.picCrossButton2.TabStop = false;
             // 
-            // btnGraphReset
+            // picSquareToCross2
             // 
-            this.btnGraphReset.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGraphReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnGraphReset.Location = new System.Drawing.Point(460, 650);
-            this.btnGraphReset.Name = "btnGraphReset";
-            this.btnGraphReset.Size = new System.Drawing.Size(90, 30);
-            this.btnGraphReset.TabIndex = 41;
-            this.btnGraphReset.Text = "Reset";
-            this.btnGraphReset.UseVisualStyleBackColor = true;
-            this.btnGraphReset.Click += new System.EventHandler(this.btnGraphReset_Click);
+            this.picSquareToCross2.Image = global::HobslideHelper.Properties.Resources.arrow;
+            this.picSquareToCross2.Location = new System.Drawing.Point(80, 450);
+            this.picSquareToCross2.Name = "picSquareToCross2";
+            this.picSquareToCross2.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToCross2.TabIndex = 31;
+            this.picSquareToCross2.TabStop = false;
             // 
-            // labelGraphTotal
+            // picSquareToCross3
             // 
-            this.labelGraphTotal.AutoSize = true;
-            this.labelGraphTotal.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelGraphTotal.Location = new System.Drawing.Point(262, 655);
-            this.labelGraphTotal.Name = "labelGraphTotal";
-            this.labelGraphTotal.Size = new System.Drawing.Size(57, 22);
-            this.labelGraphTotal.TabIndex = 42;
-            this.labelGraphTotal.Text = "Total:";
+            this.picSquareToCross3.Image = global::HobslideHelper.Properties.Resources.cross;
+            this.picSquareToCross3.Location = new System.Drawing.Point(120, 450);
+            this.picSquareToCross3.Name = "picSquareToCross3";
+            this.picSquareToCross3.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToCross3.TabIndex = 30;
+            this.picSquareToCross3.TabStop = false;
+            // 
+            // picSquareToCross1
+            // 
+            this.picSquareToCross1.Image = global::HobslideHelper.Properties.Resources.square;
+            this.picSquareToCross1.Location = new System.Drawing.Point(40, 450);
+            this.picSquareToCross1.Name = "picSquareToCross1";
+            this.picSquareToCross1.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToCross1.TabIndex = 29;
+            this.picSquareToCross1.TabStop = false;
+            // 
+            // picSquareToSquare2
+            // 
+            this.picSquareToSquare2.Image = global::HobslideHelper.Properties.Resources.arrow;
+            this.picSquareToSquare2.Location = new System.Drawing.Point(80, 400);
+            this.picSquareToSquare2.Name = "picSquareToSquare2";
+            this.picSquareToSquare2.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToSquare2.TabIndex = 27;
+            this.picSquareToSquare2.TabStop = false;
+            // 
+            // picSquareToSquare3
+            // 
+            this.picSquareToSquare3.Image = global::HobslideHelper.Properties.Resources.square;
+            this.picSquareToSquare3.Location = new System.Drawing.Point(120, 400);
+            this.picSquareToSquare3.Name = "picSquareToSquare3";
+            this.picSquareToSquare3.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToSquare3.TabIndex = 26;
+            this.picSquareToSquare3.TabStop = false;
+            // 
+            // picSquareToSquare1
+            // 
+            this.picSquareToSquare1.Image = global::HobslideHelper.Properties.Resources.square;
+            this.picSquareToSquare1.Location = new System.Drawing.Point(40, 400);
+            this.picSquareToSquare1.Name = "picSquareToSquare1";
+            this.picSquareToSquare1.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToSquare1.TabIndex = 25;
+            this.picSquareToSquare1.TabStop = false;
+            // 
+            // picSquareToR1_2
+            // 
+            this.picSquareToR1_2.Image = global::HobslideHelper.Properties.Resources.arrow;
+            this.picSquareToR1_2.Location = new System.Drawing.Point(80, 350);
+            this.picSquareToR1_2.Name = "picSquareToR1_2";
+            this.picSquareToR1_2.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToR1_2.TabIndex = 22;
+            this.picSquareToR1_2.TabStop = false;
+            // 
+            // picSquareToR1_3
+            // 
+            this.picSquareToR1_3.Image = global::HobslideHelper.Properties.Resources.r1;
+            this.picSquareToR1_3.Location = new System.Drawing.Point(120, 350);
+            this.picSquareToR1_3.Name = "picSquareToR1_3";
+            this.picSquareToR1_3.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToR1_3.TabIndex = 21;
+            this.picSquareToR1_3.TabStop = false;
+            // 
+            // picSquareToR1_1
+            // 
+            this.picSquareToR1_1.Image = global::HobslideHelper.Properties.Resources.square;
+            this.picSquareToR1_1.Location = new System.Drawing.Point(40, 350);
+            this.picSquareToR1_1.Name = "picSquareToR1_1";
+            this.picSquareToR1_1.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToR1_1.TabIndex = 20;
+            this.picSquareToR1_1.TabStop = false;
+            // 
+            // picR1ToSquare_2
+            // 
+            this.picR1ToSquare_2.Image = global::HobslideHelper.Properties.Resources.arrow;
+            this.picR1ToSquare_2.Location = new System.Drawing.Point(80, 300);
+            this.picR1ToSquare_2.Name = "picR1ToSquare_2";
+            this.picR1ToSquare_2.Size = new System.Drawing.Size(32, 32);
+            this.picR1ToSquare_2.TabIndex = 19;
+            this.picR1ToSquare_2.TabStop = false;
+            // 
+            // picR1ToSquare_3
+            // 
+            this.picR1ToSquare_3.Image = global::HobslideHelper.Properties.Resources.square;
+            this.picR1ToSquare_3.Location = new System.Drawing.Point(120, 300);
+            this.picR1ToSquare_3.Name = "picR1ToSquare_3";
+            this.picR1ToSquare_3.Size = new System.Drawing.Size(32, 32);
+            this.picR1ToSquare_3.TabIndex = 17;
+            this.picR1ToSquare_3.TabStop = false;
+            // 
+            // picR1ToSquare_1
+            // 
+            this.picR1ToSquare_1.Image = global::HobslideHelper.Properties.Resources.r1;
+            this.picR1ToSquare_1.Location = new System.Drawing.Point(40, 300);
+            this.picR1ToSquare_1.Name = "picR1ToSquare_1";
+            this.picR1ToSquare_1.Size = new System.Drawing.Size(32, 32);
+            this.picR1ToSquare_1.TabIndex = 16;
+            this.picR1ToSquare_1.TabStop = false;
+            // 
+            // picCrossState
+            // 
+            this.picCrossState.Image = global::HobslideHelper.Properties.Resources.off;
+            this.picCrossState.Location = new System.Drawing.Point(90, 160);
+            this.picCrossState.Name = "picCrossState";
+            this.picCrossState.Size = new System.Drawing.Size(32, 32);
+            this.picCrossState.TabIndex = 7;
+            this.picCrossState.TabStop = false;
+            // 
+            // picCrossButton1
+            // 
+            this.picCrossButton1.Image = global::HobslideHelper.Properties.Resources.cross;
+            this.picCrossButton1.Location = new System.Drawing.Point(40, 160);
+            this.picCrossButton1.Name = "picCrossButton1";
+            this.picCrossButton1.Size = new System.Drawing.Size(32, 32);
+            this.picCrossButton1.TabIndex = 6;
+            this.picCrossButton1.TabStop = false;
+            // 
+            // picSquareState
+            // 
+            this.picSquareState.Image = global::HobslideHelper.Properties.Resources.off;
+            this.picSquareState.Location = new System.Drawing.Point(90, 110);
+            this.picSquareState.Name = "picSquareState";
+            this.picSquareState.Size = new System.Drawing.Size(32, 32);
+            this.picSquareState.TabIndex = 4;
+            this.picSquareState.TabStop = false;
+            // 
+            // picSquareButton1
+            // 
+            this.picSquareButton1.Image = global::HobslideHelper.Properties.Resources.square;
+            this.picSquareButton1.Location = new System.Drawing.Point(40, 110);
+            this.picSquareButton1.Name = "picSquareButton1";
+            this.picSquareButton1.Size = new System.Drawing.Size(32, 32);
+            this.picSquareButton1.TabIndex = 3;
+            this.picSquareButton1.TabStop = false;
+            // 
+            // picR1State
+            // 
+            this.picR1State.Image = global::HobslideHelper.Properties.Resources.off;
+            this.picR1State.Location = new System.Drawing.Point(90, 60);
+            this.picR1State.Name = "picR1State";
+            this.picR1State.Size = new System.Drawing.Size(32, 32);
+            this.picR1State.TabIndex = 1;
+            this.picR1State.TabStop = false;
+            // 
+            // picR1Button1
+            // 
+            this.picR1Button1.Image = global::HobslideHelper.Properties.Resources.r1;
+            this.picR1Button1.Location = new System.Drawing.Point(40, 60);
+            this.picR1Button1.Name = "picR1Button1";
+            this.picR1Button1.Size = new System.Drawing.Size(32, 32);
+            this.picR1Button1.TabIndex = 0;
+            this.picR1Button1.TabStop = false;
             // 
             // Form1
             // 
@@ -507,6 +520,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(634, 811);
+            this.Controls.Add(this.btnControllerSettings);
             this.Controls.Add(this.labelGraphTotal);
             this.Controls.Add(this.btnGraphReset);
             this.Controls.Add(this.picCrossButton2);
@@ -554,25 +568,25 @@
             this.Text = "Hobslide Helper";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            ((System.ComponentModel.ISupportInitialize)(this.picR1Button1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picR1State)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareState)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCrossState)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCrossButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picR1ToSquare_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picR1ToSquare_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picR1ToSquare_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareToR1_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareToR1_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareToR1_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareToSquare2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareToSquare3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSquareToSquare1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCrossButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSquareToCross2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSquareToCross3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSquareToCross1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCrossButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareToSquare2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareToSquare3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareToSquare1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareToR1_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareToR1_3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareToR1_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picR1ToSquare_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picR1ToSquare_3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picR1ToSquare_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCrossState)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCrossButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareState)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSquareButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picR1State)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picR1Button1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -621,6 +635,7 @@
         private System.Windows.Forms.PictureBox picCrossButton2;
         private System.Windows.Forms.Button btnGraphReset;
         private System.Windows.Forms.Label labelGraphTotal;
+        private System.Windows.Forms.Button btnControllerSettings;
     }
 }
 

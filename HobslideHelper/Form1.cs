@@ -5,16 +5,18 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SharpDX.DirectInput;
 using System.Linq;
 
 namespace HobslideHelper
 {
     public partial class Form1 : Form
     {
-        DirectInput directInput;
-        Joystick joystick;
+        InputManager inputManager;
+        ControllerConfig config;
         Stopwatch stopwatch;
+        InputButton r1Button;
+        InputButton squareButton;
+        InputButton crossButton;
 
         const double FrameTime = 1000.0 / 60.0; // 16.666ms
 
@@ -57,7 +59,7 @@ namespace HobslideHelper
         public Form1()
         {
             InitializeComponent();
-            InitializeJoystick();
+            InitializeInput();
             StartGameLoop();
             this.GetType()
                 .GetProperty("DoubleBuffered",
@@ -65,7 +67,7 @@ namespace HobslideHelper
                     System.Reflection.BindingFlags.NonPublic)
                 .SetValue(this, true, null);
             cmbMode.SelectedIndex = 0;
-            graphRect = new Rectangle(40, 490, 540, 150);
+            graphRect = new Rectangle(40, 540, 540, 150);
             LoadFont();
         }
 
@@ -211,31 +213,64 @@ namespace HobslideHelper
             labelGraphTotal.Text = $"Total: {total}";
         }
 
-        void InitializeJoystick()
+        void InitializeInput()
         {
-            try
+            inputManager = new InputManager();
+
+            if (!inputManager.Connected)
             {
-                directInput = new DirectInput();
-
-                foreach (var device in directInput.GetDevices(DeviceType.Gamepad, DeviceEnumerationFlags.AllDevices))
-                {
-                    joystick = new Joystick(directInput, device.InstanceGuid);
-                    break;
-                }
-
-                if (joystick == null)
-                {
-                    Console.WriteLine("Controller not found");
-                    return;
-                }
-
-                joystick.Properties.BufferSize = 128;
-                joystick.Acquire();
+                MessageBox.Show("Controller not found");
+                return;
             }
-            catch (Exception ex)
+
+            // デフォルト割り当て
+
+            if (inputManager.CurrentBackend == InputBackend.XInput)
             {
-                Console.WriteLine("Joystick initialization failed: " + ex.Message);
+                r1Button = new InputButton
+                {
+                    Backend = InputBackend.XInput,
+                    ButtonIndex = 2
+                };
+
+                squareButton = new InputButton
+                {
+                    Backend = InputBackend.XInput,
+                    ButtonIndex = 0
+                };
+
+                crossButton = new InputButton
+                {
+                    Backend = InputBackend.XInput,
+                    ButtonIndex = 1
+                };
             }
+            else
+            {
+                r1Button = new InputButton
+                {
+                    Backend = InputBackend.DirectInput,
+                    ButtonIndex = 5
+                };
+
+                squareButton = new InputButton
+                {
+                    Backend = InputBackend.DirectInput,
+                    ButtonIndex = 0
+                };
+
+                crossButton = new InputButton
+                {
+                    Backend = InputBackend.DirectInput,
+                    ButtonIndex = 1
+                };
+            }
+
+            config = ControllerConfig.Load();
+
+            r1Button.ButtonIndex = config.R1Button;
+            squareButton.ButtonIndex = config.SquareButton;
+            crossButton.ButtonIndex = config.CrossButton;
         }
 
         async void StartGameLoop()
@@ -263,21 +298,9 @@ namespace HobslideHelper
         {
             frameCounter++;
 
-            bool r1Now = false, squareNow = false, crossNow = false;
-
-            if (joystick != null)
-            {
-                try
-                {
-                    joystick.Poll();
-                    var state = joystick.GetCurrentState();
-                    var buttons = state.Buttons;
-                    r1Now = buttons[5];     // R1
-                    squareNow = buttons[0]; // □
-                    crossNow = buttons[1];  // ✕
-                }
-                catch { }
-            }
+            bool r1Now = inputManager.GetButton(r1Button);
+            bool squareNow = inputManager.GetButton(squareButton);
+            bool crossNow = inputManager.GetButton(crossButton);
 
             // --- 1. R1 State Management ---
             if (r1Now && !r1Pressed) // On R1 Press
@@ -586,7 +609,7 @@ namespace HobslideHelper
             }
         }
 
-        private void btnGraphReset_Click(object sender, EventArgs e)
+        private void BtnGraphReset_Click(object sender, EventArgs e)
         {
             squareToSquareHistory.Clear();
             this.Invalidate(graphRect);
@@ -594,6 +617,19 @@ namespace HobslideHelper
             labelEvalSquareToR1.Text = "";
             labelGraphAverage.Text = $"AVG:";
             labelGraphTotal.Text = $"Total:";
+        }
+
+        private void BtnControllerSettings_Click(object sender, EventArgs e)
+        {
+            ControllerSettings form = new ControllerSettings(inputManager);
+
+            form.ShowDialog();
+
+            config = form.GetConfig();
+
+            r1Button.ButtonIndex = config.R1Button;
+            squareButton.ButtonIndex = config.SquareButton;
+            crossButton.ButtonIndex = config.CrossButton;
         }
     }
 }

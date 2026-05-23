@@ -81,6 +81,26 @@ namespace HobslideHelper.Properties {
         }
         
         /// <summary>
+        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static byte[] GenJyuuGothicX_Bold {
+            get {
+                object obj = ResourceManager.GetObject("GenJyuuGothicX-Bold", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static byte[] GenJyuuGothicX_Heavy {
+            get {
+                object obj = ResourceManager.GetObject("GenJyuuGothicX-Heavy", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
         internal static System.Drawing.Bitmap off {
