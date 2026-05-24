@@ -90,7 +90,6 @@
     <Compile Include="ControllerSettings.Designer.cs">
       <DependentUpon>ControllerSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="FontManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,8 +110,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Fonts\GenJyuuGothicX-Bold.ttf" />
-    <None Include="Fonts\GenJyuuGothicX-Heavy.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

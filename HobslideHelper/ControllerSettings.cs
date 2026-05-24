@@ -24,22 +24,9 @@ namespace HobslideHelper
         public ControllerSettings(InputManager manager)
         {
             InitializeComponent();
-            ApplyFonts();
             inputManager = manager;
             config = ControllerConfig.Load();
             RefreshLabels();
-        }
-
-        void ApplyFonts()
-        {
-            lblR1.Font = FontManager.CreateFont(FontManager.Bold, 12f);
-            lblSquare.Font = FontManager.CreateFont(FontManager.Bold, 12f);
-            lblCross.Font = FontManager.CreateFont(FontManager.Bold, 12f);
-            btnR1.Font = FontManager.CreateFont(FontManager.Bold, 12f);
-            btnSquare.Font = FontManager.CreateFont(FontManager.Bold, 12f);
-            btnCross.Font = FontManager.CreateFont(FontManager.Bold, 12f);
-            btnSave.Font = FontManager.CreateFont(FontManager.Bold, 12f);
-            lblStatus.Font = FontManager.CreateFont(FontManager.Bold, 12f);
         }
 
         void RefreshLabels()

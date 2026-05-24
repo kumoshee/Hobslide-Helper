@@ -47,33 +47,33 @@
             // lblR1
             // 
             this.lblR1.AutoSize = true;
-            this.lblR1.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblR1.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblR1.ForeColor = System.Drawing.Color.White;
             this.lblR1.Location = new System.Drawing.Point(130, 44);
             this.lblR1.Name = "lblR1";
-            this.lblR1.Size = new System.Drawing.Size(69, 22);
+            this.lblR1.Size = new System.Drawing.Size(74, 23);
             this.lblR1.TabIndex = 13;
             this.lblR1.Text = "Button ";
             // 
             // lblSquare
             // 
             this.lblSquare.AutoSize = true;
-            this.lblSquare.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblSquare.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSquare.ForeColor = System.Drawing.Color.White;
             this.lblSquare.Location = new System.Drawing.Point(130, 94);
             this.lblSquare.Name = "lblSquare";
-            this.lblSquare.Size = new System.Drawing.Size(69, 22);
+            this.lblSquare.Size = new System.Drawing.Size(74, 23);
             this.lblSquare.TabIndex = 14;
             this.lblSquare.Text = "Button ";
             // 
             // lblCross
             // 
             this.lblCross.AutoSize = true;
-            this.lblCross.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblCross.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCross.ForeColor = System.Drawing.Color.White;
             this.lblCross.Location = new System.Drawing.Point(130, 144);
             this.lblCross.Name = "lblCross";
-            this.lblCross.Size = new System.Drawing.Size(69, 22);
+            this.lblCross.Size = new System.Drawing.Size(74, 23);
             this.lblCross.TabIndex = 15;
             this.lblCross.Text = "Button ";
             // 
@@ -106,7 +106,7 @@
             // 
             // lblStatus
             // 
-            this.lblStatus.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblStatus.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.White;
             this.lblStatus.Location = new System.Drawing.Point(40, 260);
             this.lblStatus.Name = "lblStatus";
@@ -116,48 +116,48 @@
             // 
             // btnR1
             // 
-            this.btnR1.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnR1.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnR1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnR1.Location = new System.Drawing.Point(250, 40);
             this.btnR1.Name = "btnR1";
-            this.btnR1.Size = new System.Drawing.Size(40, 30);
-            this.btnR1.TabIndex = 45;
-            this.btnR1.Text = "…";
+            this.btnR1.Size = new System.Drawing.Size(32, 32);
+            this.btnR1.TabIndex = 1;
+            this.btnR1.Text = "...";
             this.btnR1.UseVisualStyleBackColor = true;
             this.btnR1.Click += new System.EventHandler(this.BtnR1_Click);
             // 
             // btnSquare
             // 
-            this.btnSquare.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSquare.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSquare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnSquare.Location = new System.Drawing.Point(250, 90);
             this.btnSquare.Name = "btnSquare";
-            this.btnSquare.Size = new System.Drawing.Size(40, 30);
-            this.btnSquare.TabIndex = 46;
-            this.btnSquare.Text = "…";
+            this.btnSquare.Size = new System.Drawing.Size(32, 32);
+            this.btnSquare.TabIndex = 2;
+            this.btnSquare.Text = "...";
             this.btnSquare.UseVisualStyleBackColor = true;
             this.btnSquare.Click += new System.EventHandler(this.BtnSquare_Click);
             // 
             // btnCross
             // 
-            this.btnCross.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCross.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCross.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnCross.Location = new System.Drawing.Point(250, 140);
             this.btnCross.Name = "btnCross";
-            this.btnCross.Size = new System.Drawing.Size(40, 30);
-            this.btnCross.TabIndex = 47;
-            this.btnCross.Text = "…";
+            this.btnCross.Size = new System.Drawing.Size(32, 32);
+            this.btnCross.TabIndex = 3;
+            this.btnCross.Text = "...";
             this.btnCross.UseVisualStyleBackColor = true;
             this.btnCross.Click += new System.EventHandler(this.BtnCross_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSave.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnSave.Location = new System.Drawing.Point(210, 200);
+            this.btnSave.Location = new System.Drawing.Point(202, 200);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 30);
-            this.btnSave.TabIndex = 49;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);

@@ -59,7 +59,6 @@ namespace HobslideHelper
         public Form1()
         {
             InitializeComponent();
-            ApplyFonts();
             InitializeInput();
             StartGameLoop();
             this.GetType()
@@ -69,34 +68,6 @@ namespace HobslideHelper
                 .SetValue(this, true, null);
             cmbMode.SelectedIndex = 0;
             graphRect = new Rectangle(40, 540, 540, 150);
-        }
-
-        void ApplyFonts()
-        {
-            // メインラベル
-            labelButtonInput.Font = FontManager.CreateFont(FontManager.Heavy, 15.75f);
-            labelSettings.Font = FontManager.CreateFont(FontManager.Heavy, 15.75f);
-            labelInputSequence.Font = FontManager.CreateFont(FontManager.Heavy, 15.75f);
-            labelGraph.Font = FontManager.CreateFont(FontManager.Heavy, 15.75f);
-            labelR1Hold.Font = FontManager.CreateFont(FontManager.Heavy, 15.75f);
-            labelSquareHold.Font = FontManager.CreateFont(FontManager.Heavy, 15.75f);
-            labelCrossHold.Font = FontManager.CreateFont(FontManager.Heavy, 15.75f);
-            labelR1ToSquare.Font = FontManager.CreateFont(FontManager.Heavy, 15.75f);
-            labelSquareToR1.Font = FontManager.CreateFont(FontManager.Heavy, 15.75f);
-            labelSquareToSquare.Font = FontManager.CreateFont(FontManager.Heavy, 15.75f);
-            labelSquareToCross.Font = FontManager.CreateFont(FontManager.Heavy, 15.75f);
-            labelEvalR1ToSquare.Font = FontManager.CreateFont(FontManager.Heavy, 15.75f);
-            labelEvalSquareToR1.Font = FontManager.CreateFont(FontManager.Heavy, 15.75f);
-
-            // サブラベル
-            labelMode.Font = FontManager.CreateFont(FontManager.Bold, 12f);
-            cmbMode.Font = FontManager.CreateFont(FontManager.Bold, 12f);
-            labelOverlay.Font = FontManager.CreateFont(FontManager.Bold, 12f);
-            labelCrossButtonReset.Font = FontManager.CreateFont(FontManager.Bold, 12f);
-            btnControllerSettings.Font = FontManager.CreateFont(FontManager.Bold, 12f);
-            labelGraphAverage.Font = FontManager.CreateFont(FontManager.Bold, 12f);
-            labelGraphTotal.Font = FontManager.CreateFont(FontManager.Bold, 12f);
-            btnGraphReset.Font = FontManager.CreateFont(FontManager.Bold, 12f);
         }
 
         private void CmbMode_SelectedIndexChanged(object sender, EventArgs e)
@@ -525,15 +496,11 @@ namespace HobslideHelper
 
                 path.AddString(
                     lbl.Text,
-                    FontManager.GetFamily(FontManager.Heavy),
-                    (int)FontStyle.Bold,
+                    lbl.Font.FontFamily,
+                    (int)lbl.Font.Style,
                     fontSizePixel,
                     new Rectangle(0, 0, lbl.Width, lbl.Height),
-                    new StringFormat
-                    {
-                        Alignment = StringAlignment.Near,
-                        LineAlignment = StringAlignment.Center
-                    }
+                    new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center }
                 );
 
                 using (LinearGradientBrush rainbowBrush = new LinearGradientBrush(
