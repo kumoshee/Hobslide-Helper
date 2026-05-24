@@ -56,7 +56,7 @@ namespace HobslideHelper
             {
                 R1Backend = InputBackend.DirectInput,
                 R1DeviceGuid = "",
-                R1Button = 5,
+                R1Button = 0,
 
                 SquareBackend = InputBackend.DirectInput,
                 SquareDeviceGuid = "",
@@ -64,7 +64,7 @@ namespace HobslideHelper
 
                 CrossBackend = InputBackend.DirectInput,
                 CrossDeviceGuid = "",
-                CrossButton = 1
+                CrossButton = 0
             };
         }
     }
