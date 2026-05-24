@@ -147,15 +147,15 @@
             // cmbMode
             // 
             this.cmbMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMode.Font = new System.Drawing.Font("源柔ゴシックX Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.cmbMode.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.cmbMode.FormattingEnabled = true;
             this.cmbMode.Items.AddRange(new object[] {
             "Average",
             "Fast",
             "Slow"});
-            this.cmbMode.Location = new System.Drawing.Point(460, 63);
+            this.cmbMode.Location = new System.Drawing.Point(460, 62);
             this.cmbMode.Name = "cmbMode";
-            this.cmbMode.Size = new System.Drawing.Size(120, 26);
+            this.cmbMode.Size = new System.Drawing.Size(120, 30);
             this.cmbMode.TabIndex = 11;
             this.cmbMode.SelectedIndexChanged += new System.EventHandler(this.CmbMode_SelectedIndexChanged);
             // 
@@ -278,10 +278,10 @@
             // labelGraphAverage
             // 
             this.labelGraphAverage.AutoSize = true;
-            this.labelGraphAverage.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelGraphAverage.Location = new System.Drawing.Point(36, 705);
+            this.labelGraphAverage.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelGraphAverage.Location = new System.Drawing.Point(36, 704);
             this.labelGraphAverage.Name = "labelGraphAverage";
-            this.labelGraphAverage.Size = new System.Drawing.Size(49, 22);
+            this.labelGraphAverage.Size = new System.Drawing.Size(46, 22);
             this.labelGraphAverage.TabIndex = 37;
             this.labelGraphAverage.Text = "AVG:";
             // 
@@ -310,7 +310,7 @@
             // 
             // btnGraphReset
             // 
-            this.btnGraphReset.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnGraphReset.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btnGraphReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnGraphReset.Location = new System.Drawing.Point(460, 700);
             this.btnGraphReset.Name = "btnGraphReset";
@@ -323,18 +323,18 @@
             // labelGraphTotal
             // 
             this.labelGraphTotal.AutoSize = true;
-            this.labelGraphTotal.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelGraphTotal.Location = new System.Drawing.Point(262, 705);
+            this.labelGraphTotal.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelGraphTotal.Location = new System.Drawing.Point(262, 704);
             this.labelGraphTotal.Name = "labelGraphTotal";
-            this.labelGraphTotal.Size = new System.Drawing.Size(57, 22);
+            this.labelGraphTotal.Size = new System.Drawing.Size(55, 22);
             this.labelGraphTotal.TabIndex = 42;
             this.labelGraphTotal.Text = "Total:";
             // 
             // btnControllerSettings
             // 
-            this.btnControllerSettings.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnControllerSettings.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btnControllerSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnControllerSettings.Location = new System.Drawing.Point(400, 213);
+            this.btnControllerSettings.Location = new System.Drawing.Point(400, 212);
             this.btnControllerSettings.Name = "btnControllerSettings";
             this.btnControllerSettings.Size = new System.Drawing.Size(180, 30);
             this.btnControllerSettings.TabIndex = 44;

@@ -116,7 +116,7 @@
             // 
             // btnR1
             // 
-            this.btnR1.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnR1.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold);
             this.btnR1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnR1.Location = new System.Drawing.Point(250, 40);
             this.btnR1.Name = "btnR1";
@@ -128,7 +128,7 @@
             // 
             // btnSquare
             // 
-            this.btnSquare.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSquare.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold);
             this.btnSquare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnSquare.Location = new System.Drawing.Point(250, 90);
             this.btnSquare.Name = "btnSquare";
@@ -140,7 +140,7 @@
             // 
             // btnCross
             // 
-            this.btnCross.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnCross.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold);
             this.btnCross.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnCross.Location = new System.Drawing.Point(250, 140);
             this.btnCross.Name = "btnCross";
@@ -152,7 +152,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("源柔ゴシックX Heavy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSave.Font = new System.Drawing.Font("源柔ゴシックX Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnSave.Location = new System.Drawing.Point(210, 200);
             this.btnSave.Name = "btnSave";

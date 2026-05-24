@@ -85,7 +85,7 @@ namespace HobslideHelper.Properties {
         /// </summary>
         internal static byte[] GenJyuuGothicX_Bold {
             get {
-                object obj = ResourceManager.GetObject("GenJyuuGothicX-Bold", resourceCulture);
+                object obj = ResourceManager.GetObject("GenJyuuGothicX_Bold", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -95,7 +95,7 @@ namespace HobslideHelper.Properties {
         /// </summary>
         internal static byte[] GenJyuuGothicX_Heavy {
             get {
-                object obj = ResourceManager.GetObject("GenJyuuGothicX-Heavy", resourceCulture);
+                object obj = ResourceManager.GetObject("GenJyuuGothicX_Heavy", resourceCulture);
                 return ((byte[])(obj));
             }
         }

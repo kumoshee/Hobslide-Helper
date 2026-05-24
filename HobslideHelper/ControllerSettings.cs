@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Emit;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -7,9 +8,7 @@ namespace HobslideHelper
     public partial class ControllerSettings : Form
     {
         InputManager inputManager;
-
         ControllerConfig config;
-
         bool waitingInput = false;
 
         enum WaitingType
@@ -25,22 +24,30 @@ namespace HobslideHelper
         public ControllerSettings(InputManager manager)
         {
             InitializeComponent();
-
+            ApplyFonts();
             inputManager = manager;
-
             config = ControllerConfig.Load();
-
             RefreshLabels();
+        }
+
+        void ApplyFonts()
+        {
+            lblR1.Font = FontManager.CreateFont(FontManager.Bold, 12f);
+            lblSquare.Font = FontManager.CreateFont(FontManager.Bold, 12f);
+            lblCross.Font = FontManager.CreateFont(FontManager.Bold, 12f);
+            btnR1.Font = FontManager.CreateFont(FontManager.Bold, 12f);
+            btnSquare.Font = FontManager.CreateFont(FontManager.Bold, 12f);
+            btnCross.Font = FontManager.CreateFont(FontManager.Bold, 12f);
+            btnSave.Font = FontManager.CreateFont(FontManager.Bold, 12f);
+            lblStatus.Font = FontManager.CreateFont(FontManager.Bold, 12f);
         }
 
         void RefreshLabels()
         {
             lblR1.Text =
                 $"Button {config.R1Button}";
-
             lblSquare.Text =
                 $"Button {config.SquareButton}";
-
             lblCross.Text =
                 $"Button {config.CrossButton}";
         }
@@ -48,7 +55,6 @@ namespace HobslideHelper
         async Task WaitButtonAsync()
         {
             waitingInput = true;
-
             lblStatus.Text = "Press controller button...";
 
             while (waitingInput)
