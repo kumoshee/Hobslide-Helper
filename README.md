@@ -2,7 +2,7 @@
 This helps you practice Hobslide, which can be used in Crash Bandicoot: N Sane Trilogy.  
 Your input is visualized, making it easier to identify issues and evaluate your consistency.
 
-(When using this for the first time, please configure the buttons in Controller Settings.)
+**(When using this for the first time, please configure the buttons in Controller Settings.)**
 
 If the value is “+”, your input is **slower** than the base frame.  
 If the value is “-”, your input is **faster** than the base frame.
@@ -11,7 +11,7 @@ If the value is “-”, your input is **faster** than the base frame.
 - Input display and input frame
 - Frames of input sequence
 - Graph
-- Average and total of frames
+- Average of frames and total count
 - Overlay (Make the background transparent and pin the window to the front)
 
 ### Mode
