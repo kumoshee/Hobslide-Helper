@@ -46,11 +46,42 @@ namespace HobslideHelper
         List<XInputDevice> xInputDevices =
             new List<XInputDevice>();
 
+        class XInputButtonInfo
+        {
+            public Func<Gamepad, bool> IsPressed { get; set; }
+        }
+
+        static readonly XInputButtonInfo[] XInputButtons =
+        {
+            new XInputButtonInfo { IsPressed = g => g.Buttons.HasFlag(GamepadButtonFlags.A) },
+            new XInputButtonInfo { IsPressed = g => g.Buttons.HasFlag(GamepadButtonFlags.B) },
+            new XInputButtonInfo { IsPressed = g => g.Buttons.HasFlag(GamepadButtonFlags.X) },
+            new XInputButtonInfo { IsPressed = g => g.Buttons.HasFlag(GamepadButtonFlags.Y) },
+
+            new XInputButtonInfo { IsPressed = g => g.Buttons.HasFlag(GamepadButtonFlags.LeftShoulder) },
+            new XInputButtonInfo { IsPressed = g => g.Buttons.HasFlag(GamepadButtonFlags.RightShoulder) },
+
+            new XInputButtonInfo { IsPressed = g => g.Buttons.HasFlag(GamepadButtonFlags.Back) },
+            new XInputButtonInfo { IsPressed = g => g.Buttons.HasFlag(GamepadButtonFlags.Start) },
+
+            new XInputButtonInfo { IsPressed = g => g.Buttons.HasFlag(GamepadButtonFlags.LeftThumb) },
+            new XInputButtonInfo { IsPressed = g => g.Buttons.HasFlag(GamepadButtonFlags.RightThumb) },
+
+            new XInputButtonInfo { IsPressed = g => g.Buttons.HasFlag(GamepadButtonFlags.DPadUp) },
+            new XInputButtonInfo { IsPressed = g => g.Buttons.HasFlag(GamepadButtonFlags.DPadDown) },
+            new XInputButtonInfo { IsPressed = g => g.Buttons.HasFlag(GamepadButtonFlags.DPadLeft) },
+            new XInputButtonInfo { IsPressed = g => g.Buttons.HasFlag(GamepadButtonFlags.DPadRight) },
+
+            // LT
+            new XInputButtonInfo { IsPressed = g => g.LeftTrigger == 255 },
+
+            // RT
+            new XInputButtonInfo { IsPressed = g => g.RightTrigger == 255 }
+        };
+
         public bool Connected =>
                     directInputDevices.Count > 0 ||
                     xInputDevices.Count > 0;
-
-        public int MaxButtons => 16;
 
         public InputManager()
         {
@@ -231,9 +262,7 @@ namespace HobslideHelper
             return state.Buttons[buttonIndex];
         }
 
-        bool GetXInputButton(
-    string deviceGuid,
-    int buttonIndex)
+        bool GetXInputButton(string deviceGuid, int buttonIndex)
         {
             var device =
                 xInputDevices.FirstOrDefault(
@@ -242,28 +271,16 @@ namespace HobslideHelper
             if (device == null)
                 return false;
 
-            var controller = device.Controller;
-
-            if (!controller.IsConnected)
+            if (!device.Controller.IsConnected)
                 return false;
 
-            var state = controller.GetState();
+            if (buttonIndex < 0 ||
+                buttonIndex >= XInputButtons.Length)
+                return false;
 
-            var flags = state.Gamepad.Buttons;
+            var gamepad = device.Controller.GetState().Gamepad;
 
-            switch (buttonIndex)
-            {
-                case 0:
-                    return flags.HasFlag(GamepadButtonFlags.X);
-
-                case 1:
-                    return flags.HasFlag(GamepadButtonFlags.A);
-
-                case 2:
-                    return flags.HasFlag(GamepadButtonFlags.RightShoulder);
-            }
-
-            return false;
+            return XInputButtons[buttonIndex].IsPressed(gamepad);
         }
 
         public bool IsAnyButtonPressed(
@@ -317,52 +334,22 @@ namespace HobslideHelper
             {
                 try
                 {
-                    var controller =
-                        xInputDevices[i].Controller;
+                    var controller = xInputDevices[i].Controller;
 
                     if (!controller.IsConnected)
                         continue;
 
-                    var state =
-                        controller.GetState();
+                    var gamepad = controller.GetState().Gamepad;
 
-                    var flags =
-                        state.Gamepad.Buttons;
-
-                    if (flags.HasFlag(
-                        GamepadButtonFlags.X))
+                    for (int b = 0; b < XInputButtons.Length; b++)
                     {
-                        backend = InputBackend.XInput;
-
-                        deviceGuid = xInputDevices[i].DeviceGuid;
-
-                        buttonIndex = 0;
-
-                        return true;
-                    }
-
-                    if (flags.HasFlag(
-                        GamepadButtonFlags.A))
-                    {
-                        backend = InputBackend.XInput;
-
-                        deviceGuid = xInputDevices[i].DeviceGuid;
-
-                        buttonIndex = 1;
-
-                        return true;
-                    }
-
-                    if (flags.HasFlag(
-                        GamepadButtonFlags.RightShoulder))
-                    {
-                        backend = InputBackend.XInput;
-
-                        deviceGuid = xInputDevices[i].DeviceGuid;
-
-                        buttonIndex = 2;
-
-                        return true;
+                        if (XInputButtons[b].IsPressed(gamepad))
+                        {
+                            backend = InputBackend.XInput;
+                            deviceGuid = xInputDevices[i].DeviceGuid;
+                            buttonIndex = b;
+                            return true;
+                        }
                     }
                 }
                 catch
