@@ -94,7 +94,7 @@
             // labelR1Hold
             // 
             this.labelR1Hold.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelR1Hold.Location = new System.Drawing.Point(204, 62);
+            this.labelR1Hold.Location = new System.Drawing.Point(170, 62);
             this.labelR1Hold.Name = "labelR1Hold";
             this.labelR1Hold.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelR1Hold.Size = new System.Drawing.Size(115, 30);
@@ -105,7 +105,7 @@
             // labelSquareHold
             // 
             this.labelSquareHold.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSquareHold.Location = new System.Drawing.Point(204, 112);
+            this.labelSquareHold.Location = new System.Drawing.Point(170, 112);
             this.labelSquareHold.Name = "labelSquareHold";
             this.labelSquareHold.Size = new System.Drawing.Size(115, 30);
             this.labelSquareHold.TabIndex = 5;
@@ -115,7 +115,7 @@
             // labelCrossHold
             // 
             this.labelCrossHold.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCrossHold.Location = new System.Drawing.Point(204, 162);
+            this.labelCrossHold.Location = new System.Drawing.Point(170, 162);
             this.labelCrossHold.Name = "labelCrossHold";
             this.labelCrossHold.Size = new System.Drawing.Size(115, 30);
             this.labelCrossHold.TabIndex = 8;
@@ -138,7 +138,7 @@
             this.labelSettings.AutoSize = true;
             this.labelSettings.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSettings.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.labelSettings.Location = new System.Drawing.Point(345, 20);
+            this.labelSettings.Location = new System.Drawing.Point(301, 20);
             this.labelSettings.Name = "labelSettings";
             this.labelSettings.Size = new System.Drawing.Size(108, 30);
             this.labelSettings.TabIndex = 10;
@@ -153,7 +153,7 @@
             "Average",
             "Fast",
             "Slow"});
-            this.cmbMode.Location = new System.Drawing.Point(460, 62);
+            this.cmbMode.Location = new System.Drawing.Point(416, 62);
             this.cmbMode.Name = "cmbMode";
             this.cmbMode.Size = new System.Drawing.Size(120, 31);
             this.cmbMode.TabIndex = 1;
@@ -162,9 +162,9 @@
             // labelMode
             // 
             this.labelMode.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMode.Location = new System.Drawing.Point(370, 62);
+            this.labelMode.Location = new System.Drawing.Point(326, 62);
             this.labelMode.Name = "labelMode";
-            this.labelMode.Size = new System.Drawing.Size(80, 30);
+            this.labelMode.Size = new System.Drawing.Size(90, 30);
             this.labelMode.TabIndex = 12;
             this.labelMode.Text = "Mode";
             this.labelMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,9 +172,9 @@
             // labelOverlay
             // 
             this.labelOverlay.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOverlay.Location = new System.Drawing.Point(370, 112);
+            this.labelOverlay.Location = new System.Drawing.Point(326, 112);
             this.labelOverlay.Name = "labelOverlay";
-            this.labelOverlay.Size = new System.Drawing.Size(80, 30);
+            this.labelOverlay.Size = new System.Drawing.Size(90, 30);
             this.labelOverlay.TabIndex = 13;
             this.labelOverlay.Text = "Overlay";
             this.labelOverlay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -183,7 +183,7 @@
             // 
             this.chkOverlay.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkOverlay.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.chkOverlay.Location = new System.Drawing.Point(460, 116);
+            this.chkOverlay.Location = new System.Drawing.Point(416, 116);
             this.chkOverlay.Name = "chkOverlay";
             this.chkOverlay.Padding = new System.Windows.Forms.Padding(3);
             this.chkOverlay.Size = new System.Drawing.Size(24, 24);
@@ -205,7 +205,7 @@
             // labelR1ToSquare
             // 
             this.labelR1ToSquare.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelR1ToSquare.Location = new System.Drawing.Point(204, 302);
+            this.labelR1ToSquare.Location = new System.Drawing.Point(170, 302);
             this.labelR1ToSquare.Name = "labelR1ToSquare";
             this.labelR1ToSquare.Size = new System.Drawing.Size(115, 30);
             this.labelR1ToSquare.TabIndex = 23;
@@ -215,7 +215,7 @@
             // labelSquareToR1
             // 
             this.labelSquareToR1.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSquareToR1.Location = new System.Drawing.Point(204, 352);
+            this.labelSquareToR1.Location = new System.Drawing.Point(170, 352);
             this.labelSquareToR1.Name = "labelSquareToR1";
             this.labelSquareToR1.Size = new System.Drawing.Size(115, 30);
             this.labelSquareToR1.TabIndex = 24;
@@ -225,7 +225,7 @@
             // labelSquareToSquare
             // 
             this.labelSquareToSquare.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSquareToSquare.Location = new System.Drawing.Point(204, 402);
+            this.labelSquareToSquare.Location = new System.Drawing.Point(170, 402);
             this.labelSquareToSquare.Name = "labelSquareToSquare";
             this.labelSquareToSquare.Size = new System.Drawing.Size(115, 30);
             this.labelSquareToSquare.TabIndex = 28;
@@ -235,7 +235,7 @@
             // labelSquareToCross
             // 
             this.labelSquareToCross.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSquareToCross.Location = new System.Drawing.Point(204, 452);
+            this.labelSquareToCross.Location = new System.Drawing.Point(170, 452);
             this.labelSquareToCross.Name = "labelSquareToCross";
             this.labelSquareToCross.Size = new System.Drawing.Size(115, 30);
             this.labelSquareToCross.TabIndex = 32;
@@ -245,7 +245,7 @@
             // labelEvalSquareToR1
             // 
             this.labelEvalSquareToR1.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEvalSquareToR1.Location = new System.Drawing.Point(370, 352);
+            this.labelEvalSquareToR1.Location = new System.Drawing.Point(326, 352);
             this.labelEvalSquareToR1.Name = "labelEvalSquareToR1";
             this.labelEvalSquareToR1.Size = new System.Drawing.Size(180, 30);
             this.labelEvalSquareToR1.TabIndex = 34;
@@ -256,7 +256,7 @@
             // labelEvalR1ToSquare
             // 
             this.labelEvalR1ToSquare.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEvalR1ToSquare.Location = new System.Drawing.Point(370, 302);
+            this.labelEvalR1ToSquare.Location = new System.Drawing.Point(326, 302);
             this.labelEvalR1ToSquare.Name = "labelEvalR1ToSquare";
             this.labelEvalR1ToSquare.Size = new System.Drawing.Size(180, 30);
             this.labelEvalR1ToSquare.TabIndex = 33;
@@ -288,7 +288,7 @@
             // labelCrossButtonReset
             // 
             this.labelCrossButtonReset.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCrossButtonReset.Location = new System.Drawing.Point(390, 162);
+            this.labelCrossButtonReset.Location = new System.Drawing.Point(346, 162);
             this.labelCrossButtonReset.Name = "labelCrossButtonReset";
             this.labelCrossButtonReset.Size = new System.Drawing.Size(70, 30);
             this.labelCrossButtonReset.TabIndex = 38;
@@ -301,7 +301,7 @@
             this.chkCrossButtonReset.Checked = true;
             this.chkCrossButtonReset.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkCrossButtonReset.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.chkCrossButtonReset.Location = new System.Drawing.Point(460, 166);
+            this.chkCrossButtonReset.Location = new System.Drawing.Point(416, 166);
             this.chkCrossButtonReset.Name = "chkCrossButtonReset";
             this.chkCrossButtonReset.Padding = new System.Windows.Forms.Padding(3);
             this.chkCrossButtonReset.Size = new System.Drawing.Size(24, 24);
@@ -312,9 +312,9 @@
             // 
             this.btnGraphReset.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGraphReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnGraphReset.Location = new System.Drawing.Point(460, 700);
+            this.btnGraphReset.Location = new System.Drawing.Point(435, 700);
             this.btnGraphReset.Name = "btnGraphReset";
-            this.btnGraphReset.Size = new System.Drawing.Size(90, 30);
+            this.btnGraphReset.Size = new System.Drawing.Size(101, 30);
             this.btnGraphReset.TabIndex = 5;
             this.btnGraphReset.Text = "Reset";
             this.btnGraphReset.UseVisualStyleBackColor = true;
@@ -324,7 +324,7 @@
             // 
             this.labelGraphTotal.AutoSize = true;
             this.labelGraphTotal.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGraphTotal.Location = new System.Drawing.Point(262, 704);
+            this.labelGraphTotal.Location = new System.Drawing.Point(238, 704);
             this.labelGraphTotal.Name = "labelGraphTotal";
             this.labelGraphTotal.Size = new System.Drawing.Size(60, 23);
             this.labelGraphTotal.TabIndex = 42;
@@ -334,9 +334,9 @@
             // 
             this.btnControllerSettings.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnControllerSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnControllerSettings.Location = new System.Drawing.Point(380, 212);
+            this.btnControllerSettings.Location = new System.Drawing.Point(321, 212);
             this.btnControllerSettings.Name = "btnControllerSettings";
-            this.btnControllerSettings.Size = new System.Drawing.Size(200, 30);
+            this.btnControllerSettings.Size = new System.Drawing.Size(215, 30);
             this.btnControllerSettings.TabIndex = 4;
             this.btnControllerSettings.Text = "Controller Settings";
             this.btnControllerSettings.UseVisualStyleBackColor = true;
@@ -345,10 +345,10 @@
             // picCrossButton2
             // 
             this.picCrossButton2.Image = global::HobslideHelper.Properties.Resources.cross;
-            this.picCrossButton2.Location = new System.Drawing.Point(365, 165);
+            this.picCrossButton2.Location = new System.Drawing.Point(321, 165);
             this.picCrossButton2.Name = "picCrossButton2";
             this.picCrossButton2.Size = new System.Drawing.Size(24, 24);
-            this.picCrossButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCrossButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCrossButton2.TabIndex = 40;
             this.picCrossButton2.TabStop = false;
             // 
@@ -358,6 +358,7 @@
             this.picSquareToCross2.Location = new System.Drawing.Point(80, 450);
             this.picSquareToCross2.Name = "picSquareToCross2";
             this.picSquareToCross2.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToCross2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSquareToCross2.TabIndex = 31;
             this.picSquareToCross2.TabStop = false;
             // 
@@ -367,6 +368,7 @@
             this.picSquareToCross3.Location = new System.Drawing.Point(120, 450);
             this.picSquareToCross3.Name = "picSquareToCross3";
             this.picSquareToCross3.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToCross3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSquareToCross3.TabIndex = 30;
             this.picSquareToCross3.TabStop = false;
             // 
@@ -376,6 +378,7 @@
             this.picSquareToCross1.Location = new System.Drawing.Point(40, 450);
             this.picSquareToCross1.Name = "picSquareToCross1";
             this.picSquareToCross1.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToCross1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSquareToCross1.TabIndex = 29;
             this.picSquareToCross1.TabStop = false;
             // 
@@ -385,6 +388,7 @@
             this.picSquareToSquare2.Location = new System.Drawing.Point(80, 400);
             this.picSquareToSquare2.Name = "picSquareToSquare2";
             this.picSquareToSquare2.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToSquare2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSquareToSquare2.TabIndex = 27;
             this.picSquareToSquare2.TabStop = false;
             // 
@@ -394,6 +398,7 @@
             this.picSquareToSquare3.Location = new System.Drawing.Point(120, 400);
             this.picSquareToSquare3.Name = "picSquareToSquare3";
             this.picSquareToSquare3.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToSquare3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSquareToSquare3.TabIndex = 26;
             this.picSquareToSquare3.TabStop = false;
             // 
@@ -403,6 +408,7 @@
             this.picSquareToSquare1.Location = new System.Drawing.Point(40, 400);
             this.picSquareToSquare1.Name = "picSquareToSquare1";
             this.picSquareToSquare1.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToSquare1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSquareToSquare1.TabIndex = 25;
             this.picSquareToSquare1.TabStop = false;
             // 
@@ -412,6 +418,7 @@
             this.picSquareToR1_2.Location = new System.Drawing.Point(80, 350);
             this.picSquareToR1_2.Name = "picSquareToR1_2";
             this.picSquareToR1_2.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToR1_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSquareToR1_2.TabIndex = 22;
             this.picSquareToR1_2.TabStop = false;
             // 
@@ -421,6 +428,7 @@
             this.picSquareToR1_3.Location = new System.Drawing.Point(120, 350);
             this.picSquareToR1_3.Name = "picSquareToR1_3";
             this.picSquareToR1_3.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToR1_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSquareToR1_3.TabIndex = 21;
             this.picSquareToR1_3.TabStop = false;
             // 
@@ -430,6 +438,7 @@
             this.picSquareToR1_1.Location = new System.Drawing.Point(40, 350);
             this.picSquareToR1_1.Name = "picSquareToR1_1";
             this.picSquareToR1_1.Size = new System.Drawing.Size(32, 32);
+            this.picSquareToR1_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSquareToR1_1.TabIndex = 20;
             this.picSquareToR1_1.TabStop = false;
             // 
@@ -439,6 +448,7 @@
             this.picR1ToSquare_2.Location = new System.Drawing.Point(80, 300);
             this.picR1ToSquare_2.Name = "picR1ToSquare_2";
             this.picR1ToSquare_2.Size = new System.Drawing.Size(32, 32);
+            this.picR1ToSquare_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picR1ToSquare_2.TabIndex = 19;
             this.picR1ToSquare_2.TabStop = false;
             // 
@@ -448,6 +458,7 @@
             this.picR1ToSquare_3.Location = new System.Drawing.Point(120, 300);
             this.picR1ToSquare_3.Name = "picR1ToSquare_3";
             this.picR1ToSquare_3.Size = new System.Drawing.Size(32, 32);
+            this.picR1ToSquare_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picR1ToSquare_3.TabIndex = 17;
             this.picR1ToSquare_3.TabStop = false;
             // 
@@ -457,6 +468,7 @@
             this.picR1ToSquare_1.Location = new System.Drawing.Point(40, 300);
             this.picR1ToSquare_1.Name = "picR1ToSquare_1";
             this.picR1ToSquare_1.Size = new System.Drawing.Size(32, 32);
+            this.picR1ToSquare_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picR1ToSquare_1.TabIndex = 16;
             this.picR1ToSquare_1.TabStop = false;
             // 
@@ -466,6 +478,7 @@
             this.picCrossState.Location = new System.Drawing.Point(90, 160);
             this.picCrossState.Name = "picCrossState";
             this.picCrossState.Size = new System.Drawing.Size(32, 32);
+            this.picCrossState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCrossState.TabIndex = 7;
             this.picCrossState.TabStop = false;
             // 
@@ -475,6 +488,7 @@
             this.picCrossButton1.Location = new System.Drawing.Point(40, 160);
             this.picCrossButton1.Name = "picCrossButton1";
             this.picCrossButton1.Size = new System.Drawing.Size(32, 32);
+            this.picCrossButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCrossButton1.TabIndex = 6;
             this.picCrossButton1.TabStop = false;
             // 
@@ -484,6 +498,7 @@
             this.picSquareState.Location = new System.Drawing.Point(90, 110);
             this.picSquareState.Name = "picSquareState";
             this.picSquareState.Size = new System.Drawing.Size(32, 32);
+            this.picSquareState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSquareState.TabIndex = 4;
             this.picSquareState.TabStop = false;
             // 
@@ -493,6 +508,7 @@
             this.picSquareButton1.Location = new System.Drawing.Point(40, 110);
             this.picSquareButton1.Name = "picSquareButton1";
             this.picSquareButton1.Size = new System.Drawing.Size(32, 32);
+            this.picSquareButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSquareButton1.TabIndex = 3;
             this.picSquareButton1.TabStop = false;
             // 
@@ -502,6 +518,7 @@
             this.picR1State.Location = new System.Drawing.Point(90, 60);
             this.picR1State.Name = "picR1State";
             this.picR1State.Size = new System.Drawing.Size(32, 32);
+            this.picR1State.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picR1State.TabIndex = 1;
             this.picR1State.TabStop = false;
             // 
@@ -511,6 +528,7 @@
             this.picR1Button1.Location = new System.Drawing.Point(40, 60);
             this.picR1Button1.Name = "picR1Button1";
             this.picR1Button1.Size = new System.Drawing.Size(32, 32);
+            this.picR1Button1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picR1Button1.TabIndex = 0;
             this.picR1Button1.TabStop = false;
             // 
@@ -519,7 +537,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(634, 811);
+            this.ClientSize = new System.Drawing.Size(564, 761);
             this.Controls.Add(this.btnControllerSettings);
             this.Controls.Add(this.labelGraphTotal);
             this.Controls.Add(this.btnGraphReset);
@@ -564,6 +582,7 @@
             this.Controls.Add(this.picR1Button1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Hobslide Helper";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);

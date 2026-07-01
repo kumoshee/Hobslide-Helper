@@ -17,6 +17,7 @@ namespace HobslideHelper
         InputButton r1Button;
         InputButton squareButton;
         InputButton crossButton;
+        private AutoResizeManager resizeManager;
 
         const double FrameTime = 1000.0 / 60.0; // 16.666ms
 
@@ -59,6 +60,8 @@ namespace HobslideHelper
         public Form1()
         {
             InitializeComponent();
+            resizeManager = new AutoResizeManager(this);
+            resizeManager.Initialize();
             InitializeInput();
             StartGameLoop();
             this.GetType()
@@ -67,13 +70,14 @@ namespace HobslideHelper
                     System.Reflection.BindingFlags.NonPublic)
                 .SetValue(this, true, null);
             cmbMode.SelectedIndex = 0;
-            graphRect = new Rectangle(40, 540, 540, 150);
+            graphRect = new Rectangle(40, 540, 500, 150);
+            resizeManager.OriginalGraphRect = graphRect;
         }
 
         private void CmbMode_SelectedIndexChanged(object sender, EventArgs e)
         {
             squareToSquareHistory.Clear();
-            this.Invalidate(graphRect);
+            this.Invalidate(resizeManager.CurrentGraphRect);
 
             labelEvalR1ToSquare.Text = "";
             labelEvalSquareToR1.Text = "";
@@ -119,23 +123,18 @@ namespace HobslideHelper
         {
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.AntiAlias;
+            Rectangle rect = resizeManager.CurrentGraphRect;
 
-            // 背景（Overlay時は描かない）
-            if (!chkOverlay.Checked)
-            {
-                using (SolidBrush bg = new SolidBrush(Color.FromArgb(20, 20, 20)))
-                {
-                    g.FillRectangle(bg, graphRect);
-                }
-            }
+            if (rect == Rectangle.Empty)
+                rect = graphRect;
 
             // グリッド
             using (Pen gridPen = new Pen(Color.FromArgb(50, 50, 50)))
             {
                 for (int i = 0; i <= 30; i += 5)
                 {
-                    float yy = graphRect.Bottom - (i * graphRect.Height / 30f);
-                    g.DrawLine(gridPen, graphRect.Left, yy, graphRect.Right, yy);
+                    float yy = rect.Bottom - (i * rect.Height / 30f);
+                    g.DrawLine(gridPen, rect.Left, yy, rect.Right, yy);
                 }
             }
 
@@ -146,15 +145,15 @@ namespace HobslideHelper
 
             // 全幅を必ず使用
             float margin = 20f;
-            float stepX = (float)(graphRect.Width - margin * 2) / Math.Max(1, count - 1);
+            float stepX = (float)(rect.Width - margin * 2) / Math.Max(1, count - 1);
 
             List<PointF> points = new List<PointF>();
 
             for (int i = 0; i < count; i++)
             {
                 int val = Math.Max(30, Math.Min(60, squareToSquareHistory[i]));
-                float x = graphRect.Left + margin + i * stepX;
-                float y = graphRect.Bottom - ((val - 30) * graphRect.Height / 30f);
+                float x = rect.Left + margin + i * stepX;
+                float y = rect.Bottom - ((val - 30) * rect.Height / 30f);
                 points.Add(new PointF(x, y));
             }
 
@@ -307,7 +306,7 @@ namespace HobslideHelper
                     if (squareToSquareFrames >= 30 && squareToSquareFrames <= 60)
                     {
                         squareToSquareHistory.Add(squareToSquareFrames);
-                        this.Invalidate(graphRect);
+                        this.Invalidate(resizeManager.CurrentGraphRect);
                     }
                 }
             }
@@ -332,7 +331,7 @@ namespace HobslideHelper
                 if (chkCrossButtonReset.Checked)
                 {
                     squareToSquareHistory.Clear();
-                    this.Invalidate(graphRect);
+                    this.Invalidate(resizeManager.CurrentGraphRect);
                     labelEvalR1ToSquare.Text = "";
                     labelEvalSquareToR1.Text = "";
                     labelGraphAverage.Text = $"AVG:";
@@ -560,7 +559,7 @@ namespace HobslideHelper
         private void BtnGraphReset_Click(object sender, EventArgs e)
         {
             squareToSquareHistory.Clear();
-            this.Invalidate(graphRect);
+            this.Invalidate(resizeManager.CurrentGraphRect);
             labelEvalR1ToSquare.Text = "";
             labelEvalSquareToR1.Text = "";
             labelGraphAverage.Text = $"AVG:";
